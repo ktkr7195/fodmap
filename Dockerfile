@@ -3,7 +3,8 @@ FROM ruby:2.5.1
 # リポジトリを更新し依存モジュールをインストール
 RUN apt-get update -qq && \
     apt-get install -y build-essential \
-                       nodejs
+                       nodejs \
+                       vim
 
 # ルート直下にwebappという名前で作業ディレクトリを作成（コンテナ内のアプリケーションディレクトリ）
 RUN mkdir /webapp
