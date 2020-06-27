@@ -6,12 +6,10 @@
       <img src="/assets/test.jpg" alt="test">
     </a>  
       <li class="">
-        <a href="/ibs-central/"><span class='text-wrapper'><span class='text-inner-wrapper'>FODMAPについて</span></span>
-        </a>        
+        <%= link_to 'テスト', recipes_index_path %> 
       </li>
       <li class="">
-          <a href="/ibs-central/i-have-ibs/"><span class='text-wrapper'><span class='text-inner-wrapper'>レシピ</span></span>
-          </a>
+        <%= link_to 'レシピ', recipes_index_path %>
       </li>  
       <li class="login"> 
         <% if user_signed_in? %>
