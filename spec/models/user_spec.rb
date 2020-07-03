@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
     expect(FactoryBot.create(:user)).to be_valid
   end
 
-  it "has to have a firstName" do 
+  it "should have a firstName" do 
     expect(FactoryBot.build(:user, firstName: "")).to_not be_valid 
   end
   
@@ -14,15 +14,15 @@ RSpec.describe User, type: :model do
     expect(FactoryBot.build(:user, firstName: "a" * 21)).to_not be_valid        
   end
 
-  it "has to have a lastName" do 
+  it "should have a lastName" do 
     expect(FactoryBot.build(:user, lastName: "")).to_not be_valid 
   end
 
-  it "is invalid with too long lastName" do
+  it "should invalid with too long lastName" do
     expect(FactoryBot.build(:user, lastName: "a" * 21)).to_not be_valid        
   end 
 
-  it "has to have a email" do 
+  it "should have a email" do 
     expect(FactoryBot.build(:user, email: "")).to_not be_valid 
   end 
 
@@ -31,7 +31,7 @@ RSpec.describe User, type: :model do
     expect(FactoryBot.build(:user, email: user1.email)).to_not be_valid
   end 
 
-  it "has to have a password" do 
+  it "should have a password" do 
     expect(FactoryBot.build(:user, password: "")).to_not be_valid 
   end 
 
@@ -50,13 +50,13 @@ RSpec.describe User, type: :model do
     expect(user.reload.email).to eq mixed_case_email.downcase
   end
 
-  it "is invalid with a blank password" do
+  it "should be invalid with a blank password" do
     user = FactoryBot.build(:user, password: " " * 6)
     user.valid?
     expect(user.errors[:password]).to include("が入力されていません。")
   end
 
-  it "is invalid with a password less than 6 characters" do
+  it "should be invalid with a password less than 6 characters" do
     user = FactoryBot.build(:user, password: "a" * 5)
     user.valid?
     expect(user.errors[:password]).to include("は6文字以上に設定して下さい。")

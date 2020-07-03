@@ -1,0 +1,87 @@
+input {
+  color: #1a8bbb;
+  min-width: 100px;
+  display: block;
+  font-size: 18px;
+  font-family: HelveticaNeueW01-67MdCn_692710,Arial,serif;
+  margin-bottom: 15px;
+}
+
+.content-form {
+  margin-top: 50px;
+  padding-bottom: 80px;
+    form {
+    overflow: auto;
+    width: 600px;
+    }
+}
+
+/**
+ * Text input
+ */
+ %input,
+ input[type="email"],
+ input[type="number"],
+ input[type="password"],
+ input[type="tel"],
+ input[type="url"],
+ input[type="text"],
+ input[type="search"],
+ textarea,
+ select {
+   display: inline-block;
+   box-sizing: border-box;
+   color: #2a2525;
+   border: 0px solid currentColor;
+   -webkkit-border-radius: 2px;
+   border-radius: 4px;
+   padding: 5px 15px;
+   height: 50px;
+   max-width: 100%;
+   background: #e3e3e3;
+   -webkit-transition: background 0.2s, color 0.2s;
+   transition: background 0.2s, color 0.2s;
+   -webkit-appearance: none; /* Remove ios text input inner shadow */
+   outline: none;
+   width: 100%;
+   font-family: HelveticaNeueW01-57Cn,Arial,serif;
+ 
+   &:focus,
+   .no-touch &:hover {
+     background: #bdd5ee;
+     }
+ 
+   &:focus {
+     outline: 0;
+     border: 1.5px solid #66afe9;
+     }
+   }
+  
+textarea {
+  padding: 10px 15px;
+  height: auto;
+  resize: vertical;
+}
+
+
+
+ /**
+ * button
+ */
+ .btn-yellow-normal {
+  background-color: #fcb426;
+  color: #1e1934;
+  font-size: 20px;
+  font-family: HelveticaNeueW01-67MdCn_692710,Arial,serif;
+  text-decoration: none;
+  padding: 13px 30px;
+  height: 50px;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 4px;
+  float: right;
+    input {
+      color: black;
+    }
+ }

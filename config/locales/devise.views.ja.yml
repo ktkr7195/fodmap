@@ -4,6 +4,10 @@ ja:
       models:
         user:
           attributes:
+            firstName:
+              blank: "が入力されていません。"
+            lastName:
+              blank: "が入力されていません。"
             email:
               taken: "は既に使用されています。"
               blank: "が入力されていません。"
@@ -27,6 +31,7 @@ ja:
         remember_me: "次回から自動的にログイン"
     models:
       user: "ユーザ"
+      board: 掲示板
   devise:
     confirmations:
       new:

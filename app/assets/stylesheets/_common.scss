@@ -1,3 +1,11 @@
+label {
+  color: #1a8bbb;
+  min-width: 100px;
+  display: block;
+  font-size: 18px;
+  font-family: HelveticaNeueW01-67MdCn_692710,Arial,serif;  
+}
+
 .padding-4 {
   padding: 40px;
 }
@@ -35,6 +43,30 @@
     }        
 }
 
+.banner {
+  height: 270px;
+  background-color: #1e1934;
+  .wrapper {
+    height: 290px;
+    padding: 103px 0;
+  }
+  .wrapper:after {
+    content: "";
+    width: 100%;    
+    position: relative;
+    display: block;
+    background: url(../images/icon/form-banner-icon.png) no-repeat 98% bottom; // would be nice to have fruit icon or something
+    background-size: 334px 343px;
+    margin-top: -239px;
+    right: 0;
+    z-index: 1;
+  }
+  .top h1 {    
+    font-family: HelveticaNeueW01-47LtCn_692686,Arial,serif;
+    color: #fff;
+  }
+}
+
 .wrapper {
   display: block;
   max-width: 1200px;
@@ -49,3 +81,6 @@
     padding: 5px 0;
   }
 }
+
+
+

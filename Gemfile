@@ -10,6 +10,8 @@ gem 'devise'
 # devise日本語化
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+# rails日本語対応
+gem 'rails-i18n'
 
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
@@ -66,7 +68,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  
+
   gem 'factory_bot_rails'
 end
 
