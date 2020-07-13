@@ -41,6 +41,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 # プロフィール画面用のアクションを追加
 def detail
   @user = User.find_by(id: params[:id])
+  @recipes = @user.recipes
+  @recipe = current_user.recipes.build if user_signed_in?
 end
 
   # protected

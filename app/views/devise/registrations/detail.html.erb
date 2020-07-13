@@ -1,8 +1,18 @@
-<% provide(:title, @user.firstName) %>
+<% provide(:title, @user.firstName+@user.lastName) %>
 
 <div class="wrapper">
   <h1>
     <%= gravatar_for @user %>
-    <%= @user.firstName %>
+    <%= @user.firstName+@user.lastName %>
   </h1>
+  <%= render 'recipes/recipe_form' %>
+    <div class="col-md-8">    
+    <% if @user.recipes.any? %>
+      <h3>Recipes (<%= @user.recipes.count %>)</h3>
+      <ol class="recipes">
+        <%= render 'recipes/recipe' %>
+      </ol>
+      <%# <%= will_paginate @recipes %> 
+    <% end %>
+  </div>
 </div>
