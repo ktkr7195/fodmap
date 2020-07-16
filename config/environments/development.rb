@@ -31,17 +31,17 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # default url
-  config.action_mailer.default_url_options = {  host: 'localhost' }
+  config.action_mailer.default_url_options = {  host: Rails.application.secrets.host }
   # mail setting
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address => "smtp.gmail.com",
-    :port => 587,
-    :user_name => Rails.application.credentials.gmail[:user_name],
-    :password => Rails.application.credentials.gmail[:password],
-    :authentication => :plain,
-    :enable_starttls_auto => true
+    :address =>        Rails.application.secrets.address,
+    :port =>           587,
+    :domain =>         Rails.application.secrets.domain,
+    :authentication => :login,
+    :user_name =>      Rails.application.secrets.access_key_id,
+    :password =>       Rails.application.secrets.secret_access_key
   }
 
   config.action_mailer.perform_caching = false
@@ -65,6 +65,11 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  Rails.logger = Logger.new(STDOUT)
+  config.logger = Logger::DEBUG
+  Rails.logger.datetime_format = "%Y-%m-%d %H:%M:%S"
+
 
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.

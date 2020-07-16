@@ -65,6 +65,20 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  # Use AWS SES for sending confirmation mails
+  # ActionMailer Setting with AWS SES
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_caching = true
+  config.action_mailer.default_url_options = { host: Rails.application.secrets.host }
+  ActionMailer::Base.smtp_settings = {
+      :address =>        Rails.application.secrets.address,
+      :port =>           587,
+      :domain =>         Rails.application.secrets.domain,
+      :authentication => :login,
+      :user_name =>      Rails.application.secrets.access_key_id,
+      :password =>       Rails.application.secrets.secret_access_key
+  }  # config.action_mailer.delivery_method = :ses
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
