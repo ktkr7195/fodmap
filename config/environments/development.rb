@@ -30,6 +30,21 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
 
+  # Use with SES  
+    # config.action_mailer.default_url_options = {  host: Rails.application.credentials.development[:host] }
+    
+    # config.action_mailer.raise_delivery_errors = true
+    # config.action_mailer.delivery_method = :smtp
+    # config.action_mailer.smtp_settings = {
+    #   :address =>        Rails.application.credentials.development[:address],
+    #   :port =>           587,
+    #   :domain =>         Rails.application.credentials.development[:domain],
+    #   :authentication => :login,
+    #   :user_name =>      Rails.application.credentials.development[:access_key_id],
+    #   :password =>       Rails.application.credentials.development[:secret_access_key]
+    # }
+
+
   # default url
   config.action_mailer.default_url_options = {  host: Rails.application.secrets.host }
   # mail setting
@@ -66,9 +81,9 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  Rails.logger = Logger.new(STDOUT)
-  config.logger = Logger::DEBUG
-  Rails.logger.datetime_format = "%Y-%m-%d %H:%M:%S"
+  logger           = ActiveSupport::Logger.new(STDOUT)
+  logger.formatter = config.log_formatter
+  config.logger = ActiveSupport::TaggedLogging.new(logger)
 
 
   # Use an evented file watcher to asynchronously detect changes in source code,
