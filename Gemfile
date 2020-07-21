@@ -15,8 +15,11 @@ gem 'rails-i18n'
 # faker
 gem 'faker'
 
+gem 'carrierwave',             '1.2.2'
+gem 'mini_magick',             '4.7.0'
+
 # AWS
-gem 'aws-ses'
+# gem 'aws-ses'
 
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
@@ -65,6 +68,10 @@ group :development do
   gem 'rubocop-rails'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :production do
+  gem 'fog', '1.42'
 end
 
 group :test do
