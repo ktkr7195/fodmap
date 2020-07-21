@@ -8,9 +8,10 @@ class RecipesController < ApplicationController
     @recipe = current_user.recipes.build(recipe_params)
     if @recipe.save
       flash[:success] = "Recipe created!"
-      redirect_to root_url
+      redirect_back(fallback_location: current_user)      
     else
-      render 'static_pages/home'
+      flash[:success] = "Recipe NOT created!"
+      redirect_back(fallback_location: current_user) 
     end
   end
 
@@ -23,7 +24,7 @@ class RecipesController < ApplicationController
   private
 
     def recipe_params
-      params.require(:recipe).permit(:content)
+      params.require(:recipe).permit(:content, :picture)
     end
 
     def correct_user

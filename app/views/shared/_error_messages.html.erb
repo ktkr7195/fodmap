@@ -1,0 +1,10 @@
+<% model.errors.full_messages.each do |message| %>
+            <li class="pr-5 text-danger"><i class="fas fa-exclamation-triangle"></i><%= message %></li>
+        <% end %>
+<% if model.errors.any? %>
+    <ul>
+        <% model.errors.full_messages.each do |message| %>
+            <li class="pr-5 text-danger"><i class="fas fa-exclamation-triangle"></i><%= message %></li>
+        <% end %>
+    </ul>
+<% end %>
