@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   root to:'homes#index'
+  get '/about', to:'homes#about'
   get 'recipes/index', to:'recipes#index'
   resources :recipes,          only: [:create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
