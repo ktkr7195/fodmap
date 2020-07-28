@@ -19,13 +19,15 @@ gem 'faker'
 gem 'carrierwave',             '1.2.2'
 gem 'mini_magick',             '4.9.4'
 
+gem 'pry-rails'
+gem 'rb-readline'
+
 # AWS
 # gem 'aws-ses'
 
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
-# Use Puma as the app server
-gem 'puma', '~> 3.11'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -73,6 +75,8 @@ end
 
 group :production do
   gem 'fog', '1.42'
+  # Use Puma as the app server
+  gem 'puma', '~> 3.11'
 end
 
 group :test do

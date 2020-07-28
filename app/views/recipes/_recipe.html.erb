@@ -7,7 +7,7 @@
     <span class="content"><%= recipe.content %></span>
       <%= image_tag recipe.picture.url if recipe.picture? %>
     <span class="timestamp">
-      Posted <%= time_ago_in_words(recipe.created_at) %> ago.
+      <%# Posted <%= time_ago_in_words(recipe.created_at) %> 
       <%= link_to "delete", recipe, method: :delete, data: { confirm: "You sure?" } %>
     </span>
   </li>  

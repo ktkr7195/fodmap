@@ -1,10 +1,11 @@
 <%= form_for(@recipe) do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
+  <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
   <div class="field">
     <%= f.text_area :content, placeholder: "新しいレシピを投稿する" %>
   </div>
   <%= f.submit "Post", class: "btn btn-primary" %>
-  <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+  
 <% end %>
 
 <%# <script type="text/javascript">
