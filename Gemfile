@@ -22,6 +22,8 @@ gem 'mini_magick',             '4.9.4'
 gem 'pry-rails'
 gem 'rb-readline'
 
+gem 'jquery-rails'
+
 # AWS
 # gem 'aws-ses'
 
