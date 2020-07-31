@@ -1,0 +1,6 @@
+- provide(:title, "home")
+- if user_signed_in?
+  %section.stats
+    = render 'shared/stats'
+  = render 'shared/feed'
+- else

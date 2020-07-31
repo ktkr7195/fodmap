@@ -23,6 +23,11 @@ gem 'rb-readline'
 
 gem 'jquery-rails'
 
+gem 'cocoon'
+
+gem 'erb2haml'
+gem 'haml-rails'
+
 # AWS
 # gem 'aws-ses'
 

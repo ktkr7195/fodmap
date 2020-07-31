@@ -1,0 +1,10 @@
+- @recipes.each do |recipe|
+  %li{:id => "recipe-#{recipe.id}"}
+    = link_to current_user.firstName, "/user/#{current_user.id}"
+    %span.user
+      = recipe.user.firstName+recipe.user.lastName
+    %span.content= recipe.title
+    %span.content= recipe.content
+    = image_tag recipe.picture.url if recipe.picture?
+    %span.timestamp
+      = link_to "delete", recipe, method: :delete, data: { confirm: "You sure?" }
