@@ -1,5 +1,5 @@
 class Recipe < ApplicationRecord
-  belongs_to :user  
+  belongs_to :user
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
@@ -7,12 +7,9 @@ class Recipe < ApplicationRecord
   # validate :picture_size
 
   private
-    # validate the size of the uploaded picture 
-    def picture_size
-      if picture.size > 5.megabytes
-        errors.add(:picture, "should be less than 5MB")
-      end
-    end  
 
-
+  # validate the size of the uploaded picture
+  def picture_size
+    errors.add(:picture, 'should be less than 5MB') if picture.size > 5.megabytes
+  end
 end
