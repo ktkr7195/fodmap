@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   before_action :correct_user, only: :destroy
 
   def index
-    @recipes = current_user.recipes
+    @recipes = current_user.recipes if user_signed_in?
   end
 
   def new

@@ -1,6 +1,7 @@
-class HomesController < ApplicationController  
+class HomesController < ApplicationController
   def index
-    @recipes = current_user.recipes if user_signed_in?
+    # サインインした時のみのif文
+    @feed_items = current_user.feed
   end
 
   def about; end

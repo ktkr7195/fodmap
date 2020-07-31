@@ -1,5 +1,8 @@
 <% provide(:title, "home") %>
 <% if user_signed_in? %>
+  <section class="stats">
+    <%= render 'shared/stats' %>
+  </section>
   <%= render 'shared/feed' %>
 <% else %>
   
