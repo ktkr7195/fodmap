@@ -13,6 +13,9 @@
 !/log/.keep
 !/tmp/.keep
 
+# Ignore uploaded pictures
+/public/uploads/recipe/picture/
+/app/assets/images/sample_image.jpg
 # Ignore uploaded files in development
 /storage/*
 

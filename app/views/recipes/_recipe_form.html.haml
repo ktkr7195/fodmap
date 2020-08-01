@@ -2,8 +2,8 @@
   = render 'shared/error_messages', model: f.object
   = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png'
   .field
-    = f.text_area :title, placeholder: "タイトル"
-    = f.text_area :content, placeholder: "レシピの説明"
+    = f.text_field :title, placeholder: "タイトル(ex. カレー)"
+    = f.text_area :content, placeholder: recipe_sample
   = f.submit "Post", class: "btn btn-primary"
 :javascript
   $('#recipe_picture').bind('change', function() {
