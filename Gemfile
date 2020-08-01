@@ -28,6 +28,10 @@ gem 'cocoon'
 gem 'erb2haml'
 gem 'haml-rails'
 
+# pagination
+gem 'kaminari'
+gem 'kaminari-bootstrap'
+
 # AWS
 # gem 'aws-ses'
 
