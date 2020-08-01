@@ -3,5 +3,6 @@
   %section.stats
     = render 'shared/stats'
   = render 'shared/feed'
+  = paginate @feed_items
 - else
   %h2 ログインしてください
