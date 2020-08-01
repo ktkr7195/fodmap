@@ -1,0 +1,15 @@
+-# - @feed_items.each do |feed_item|
+-#   %li
+-#     = link_to feed_item.user.firstName, "/user/#{feed_item.user_id}"
+-#     = feed_item.id
+-#     = feed_item.content
+
+- @feed_items.each_slice(3) do |feed_item|
+	.row
+		- feed_item.each do |feed_item|
+			.col-md-4
+				.feed_item
+					.image_wrapper
+						= link_to feed_item do
+							= image_tag feed_item.picture.url if feed_item.picture?
+					%h2= link_to feed_item.title, feed_item

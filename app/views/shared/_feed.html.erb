@@ -1,7 +1,0 @@
-<% @feed_items.each do |feed_item| %>
-  <li>
-    <%= link_to feed_item.user.firstName, "/user/#{feed_item.user_id}" %>
-    <%= feed_item.id %>
-    <%= feed_item.content %>
-  </li>
-<% end %>

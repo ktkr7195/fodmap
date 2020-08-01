@@ -1,0 +1,10 @@
+- model.errors.full_messages.each do |message|
+  %li.pr-5.text-danger
+    %i.fas.fa-exclamation-triangle
+    = message
+- if model.errors.any?
+  %ul
+    - model.errors.full_messages.each do |message|
+      %li.pr-5.text-danger
+        %i.fas.fa-exclamation-triangle
+        = message

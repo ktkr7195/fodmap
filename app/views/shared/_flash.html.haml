@@ -1,0 +1,4 @@
+- flash.each do |key,value|
+  .text-danger.mb-3
+    %i.fas.fa-exclamation-triangle
+    = content_tag(:span, value, class: "flash flash__#{key}")

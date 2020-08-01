@@ -1,0 +1,16 @@
+.top-menu
+  .wrapper
+    %ul.nav.navbar-nav
+      %a.logo{:href => "/"}
+        %img{:alt => "test", :src => "/assets/abdomon.jpg"}/
+      %li
+        = link_to 'FODMAPについて', about_path
+      %li
+        = link_to '自分のレシピ', recipes_path
+      %li.login
+        - if user_signed_in?
+          %span= link_to "プロフィール   ", "/user/#{current_user.id}"
+          = link_to 'ログアウト', destroy_user_session_path, method: :delete
+        - else
+          = link_to 'サインアップ', new_user_registration_path
+          = link_to 'ログイン', new_user_session_path

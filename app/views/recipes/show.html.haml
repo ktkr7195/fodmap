@@ -1,0 +1,17 @@
+.main_content
+	#recipe_top.row
+		.col-md-4
+			= image_tag @recipe.picture.url, class: "recipe_image"
+		.col-md-8
+			#recipe_info
+				%h1= @recipe.title
+				%p.description= @recipe.content
+				%p
+					Submitted by
+					= link_to @recipe.user.firstName, "/user/#{@recipe.user_id}"					
+	.row
+		.col-md-12
+			= link_to "Back", :back, class: "btn btn-default"
+			- if current_user.id === @recipe.user_id
+				= link_to "Edit", edit_recipe_path, class: "btn btn-default"
+				= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
