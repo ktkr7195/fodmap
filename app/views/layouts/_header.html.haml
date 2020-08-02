@@ -4,9 +4,10 @@
       %a.logo{:href => "/"}
         %img{:alt => "test", :src => "/assets/abdomon.jpg"}/
       %li
-        = link_to 'FODMAPについて', about_path
-      %li
-        = link_to '自分のレシピ', recipes_path
+        = link_to 'FODMAPについて', about_path      
+      - if user_signed_in?
+        %li
+          = link_to '自分のレシピ', recipes_path
       %li.login
         - if user_signed_in?
           %span= link_to "プロフィール   ", "/user/#{current_user.id}"

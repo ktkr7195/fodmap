@@ -12,4 +12,5 @@
 					.image_wrapper
 						= link_to feed_item do
 							= image_tag feed_item.picture.url if feed_item.picture?
-					%h2= link_to feed_item.title, feed_item					
+					%h2= link_to feed_item.title, feed_item	
+					= render 'likes/like', recipe: feed_item				
