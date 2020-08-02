@@ -1,7 +1,7 @@
 .main_content
 	#recipe_top.row
 		.col-md-4
-			= image_tag @recipe.picture.url, class: "recipe_image"
+			= image_tag @recipe.picture.url, class: "recipe_image" if @recipe.picture.url
 		.col-md-8
 			#recipe_info
 				%h1= @recipe.title

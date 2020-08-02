@@ -18,3 +18,4 @@
 						= link_to recipe do
 							= image_tag recipe.picture.url if recipe.picture?
 					%h2= link_to recipe.title, recipe
+					= render 'likes/like', recipe: recipe
