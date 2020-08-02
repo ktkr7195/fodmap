@@ -4,6 +4,9 @@
   .field
     = f.text_field :title, placeholder: "タイトル(ex. カレー)"
     = f.text_area :content, placeholder: recipe_sample
+  .field
+    = f.label :tag_list, 'タグをカンマ区切りで入力'
+    = f.text_field :tag_list
   = f.submit "Post", class: "btn btn-primary"
 :javascript
   $('#recipe_picture').bind('change', function() {

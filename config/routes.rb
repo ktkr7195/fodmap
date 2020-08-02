@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   post   '/like/:recipe_id' => 'likes#like',   as: 'like'
   delete '/like/:recipe_id' => 'likes#unlike', as: 'unlike'
 
+  get 'tags/:tag', to: 'recipes#index', as: :tag
+
   root to: 'homes#index'
   get '/about', to: 'homes#about'
 

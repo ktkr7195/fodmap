@@ -32,6 +32,9 @@ gem 'haml-rails'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
 
+# add tags
+gem 'acts-as-taggable-on'
+
 # AWS
 # gem 'aws-ses'
 
