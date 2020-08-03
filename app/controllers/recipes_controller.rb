@@ -11,7 +11,11 @@ class RecipesController < ApplicationController
                end
   end
 
-  def show; end
+  def show
+    @recipe = Recipe.find(params[:id])
+    @comments = @recipe.comments
+    @comment = @recipe.comments.build
+  end
 
   def new
     @recipe = current_user.recipes.build if user_signed_in?

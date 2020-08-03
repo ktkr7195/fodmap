@@ -26,7 +26,9 @@ Rails.application.routes.draw do
   get '/about', to: 'homes#about'
 
   # resources :recipes, only: %i[index create show destroy]
-  resources :recipes
+  resources :recipes do
+    resources :comments, only: [:create, :destroy]
+  end  
   resources :relationships, only: %i[create destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
