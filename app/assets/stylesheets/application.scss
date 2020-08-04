@@ -11,14 +11,12 @@
  * It is generally better to create a new file per style scope.
  */
  // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
- @import "bootstrap-sprockets";
- @import "bootstrap";
- @import "reset";
- @import "common";
- @import "form_element";
-
-
- @import "bootstrap-sprockets";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "reset";
+@import "common";
+@import "form_element";
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
 @mixin box-shadow {
@@ -163,4 +161,15 @@ body {
 	padding: 0 18px;
 	border-radius: 100px;
 	font-weight: bold;
+}
+
+
+
+// recipe form
+.form-check {
+  display: flex;
+}
+
+.tag-title {
+	margin-left: -32px;
 }
