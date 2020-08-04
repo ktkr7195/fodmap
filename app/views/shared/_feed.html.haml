@@ -8,7 +8,7 @@
 	.row
 		- feed_item.each do |feed_item|
 			.col-md-4
-				.feed_item
+				.recipe
 					.image_wrapper
 						= link_to feed_item do
 							= image_tag feed_item.picture.url if feed_item.picture?
