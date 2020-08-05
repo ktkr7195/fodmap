@@ -8,3 +8,4 @@
     = gravatar_for @user
     = @user.firstName+@user.lastName
   = render 'recipes/recipe'
+  = paginate @recipes
