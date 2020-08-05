@@ -3,6 +3,11 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
+  before_action :check_guest, only: %i[update destroy]
+
+  def check_guest
+    redirect_to root_path, alert: 'ゲストユーザーの変更・削除はできません。' if resource.email == 'guest@example.com'
+  end
 
   # GET /resource/sign_up
   # def new
@@ -38,12 +43,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-# プロフィール画面用のアクションを追加
-def detail
-  @user = User.find_by(id: params[:id])
-  @recipes = @user.recipes
-  @recipe = current_user.recipes.build if user_signed_in?
-end
+  # プロフィール画面用のアクションを追加
+  def detail
+    @user = User.find_by(id: params[:id])
+    @recipes = @user.recipes
+    @recipe = current_user.recipes.build if user_signed_in?
+  end
 
   # protected
 
@@ -58,7 +63,7 @@ end
   # end
 
   # The path used after sign up.
-  def after_sign_up_path_for(resource)
+  def after_sign_up_path_for(_resource)
     "/user/#{current_user.id}"
   end
 
