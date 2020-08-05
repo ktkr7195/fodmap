@@ -1,9 +1,11 @@
 - provide(:title, "home")
 - if user_signed_in?
-  %section.stats
-    = render 'shared/stats'
-  = render 'shared/feed'
-  = paginate @feed_items
+  -# %section.stats
+  -#   = render 'shared/stats'
+  -# = render 'shared/feed'
+  -# = paginate @feed_items
+  = render partial: 'recipes/recipe'
+  = paginate @recipes
 - else
   %h2 ログインしてください
   = link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post
