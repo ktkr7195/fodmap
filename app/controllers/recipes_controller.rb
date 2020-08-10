@@ -48,6 +48,12 @@ class RecipesController < ApplicationController
     redirect_to root_path, notice: 'レシピを削除しました！'
   end
 
+  def liked
+    # ここでcurrent_userをつかいたい、resoucesのそとでつかえないのか？
+    @user = User.first
+    @likes = Like.where(user_id: @user.id)
+  end
+
   private
 
   def recipe_params

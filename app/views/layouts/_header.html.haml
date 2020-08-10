@@ -8,6 +8,8 @@
       - if user_signed_in?
         %li
           = link_to '自分のレシピ', recipes_path
+        %li
+          = link_to 'お気に入り', recipes_liked_path  
       %li.login
         - if user_signed_in?
           %span= link_to " マイページ  ", "/user/#{current_user.id}"

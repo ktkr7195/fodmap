@@ -5,7 +5,7 @@ class HomesController < ApplicationController
       # else
       #   @recipes = Recipe.all.order('created_at DESC')
       # end
-      @recipes = Recipe.all.page(params[:page]).per(9)
+      @recipes = Recipe.all.includes(:user).page(params[:page]).per(9)
     end
   end
 

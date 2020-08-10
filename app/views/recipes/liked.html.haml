@@ -1,0 +1,10 @@
+- @likes.each do |like|  
+  - recipe = Recipe.find_by(id: like.recipe_id) 
+  - if recipe
+    .col-md-4
+      .recipe
+        .image_wrapper
+          = link_to recipe do
+            = image_tag recipe.picture.url if recipe.picture?
+        %h2= link_to recipe.title, recipe
+        = render 'likes/like', recipe: recipe  

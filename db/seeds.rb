@@ -35,7 +35,7 @@ followers.each { |follower| follower.follow(user) }
 
 users = User.order(:created_at).take(6)
 3.times do
-  picture = File.open('./app/assets/images/sample_image.jpg')
+  picture = File.open('./app/assets/images/abocado toast.jpeg')
   title = Faker::Food.dish
   content = Faker::Food.description
   users.each { |user| user.recipes.create!(picture: picture, title: title, content: content) }
