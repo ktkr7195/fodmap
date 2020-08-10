@@ -23,11 +23,15 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = current_user.recipes.build(recipe_params)
-    if @recipe.valid?
-      @recipe.save!
+    if @recipe.save
+      @recipe.tag_list.add('ラクトースフリー') if params[:recipe][:lactoce_free]
+      @recipe.tag_list.add('グルテンフリー') if params[:recipe][:gluten_free]
+      @recipe.tag_list.add('ベジタリアン') if params[:recipe][:vegetarian]
+      @recipe.tag_list.add('ビーガン') if params[:recipe][:vegan]
+      @recipe.save
       flash[:success] = 'Recipe created!'
       @recipes = current_user.recipes
-      redirect_to repces_path
+      render :index
     else
       # redirect_back(fallback_location: current_user)
       render :new
@@ -58,13 +62,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.permit!(:tag_list)
-    params.permit!(:tag_checkbox)
-    checkbox = params['tag_checkbox'].join(',')
-    tag_list = params['tag_list']
-    tag_list = [tag_list, checkbox].join(',')
-    hoge = params.permit(:title, :content, :picture)
-    hoge.to_h.merge({ tag_list: tag_list })
+    params.require(:recipe).permit(:title, :content, :picture, :tag_list, :lactoce_free, :gluten_free, :vegetarian, :vegan)
   end
 
   def correct_user

@@ -9,25 +9,24 @@
       %h3
         レシピのカテゴリーを選択してください。    
     .form-check    
-      = f.check_box :tag_list, { :multiple => true }, 'ラクトースフリー', nil
+      = f.check_box :lactoce_free, { :multiple => true }, 'ラクトースフリー', nil
       .tag-title
-        %check-box-label{for: "recipe_tag_list_ラクトースフリー"} ラクトースフリー
+        %check-box-label{for: "recipe_test_ラクトースフリー"} ラクトースフリー
     .form-check
-      = f.check_box :tag_list, { :multiple => true }, 'グルテンフリー', nil
+      = f.check_box :gluten_free, { :multiple => true }, 'グルテンフリー', nil
       .tag-title
-        %check-box-label{for: "recipe_tag_list_グルテンフリー"} グルテンフリー
+        %check-box-label{for: "recipe_test_グルテンフリー"} グルテンフリー
     .form-check  
-      = f.check_box :tag_list, { :multiple => true }, 'ベジタリアン', nil
+      = f.check_box :vegetarian, { :multiple => true }, 'ベジタリアン', nil
       .tag-title
-        %check-box-label{for: "recipe_tag_list_ベジタリアン"} ベジタリアン
+        %check-box-label{for: "recipe_test_ベジタリアン"} ベジタリアン
     .form-check  
-      = f.check_box :tag_list, { :multiple => true }, 'ビーガン', nil
+      = f.check_box :vegan, { :multiple => true }, 'ビーガン', nil
       .tag-title
-        %check-box-label{for: "recipe_tag_list_ビーガン"} ビーガン
-    -# Doesnt work with checkbox  
-    -# .form-group      
-    -#   %tag-text-list{for: "recipe_tag_list"} タグをカンマ区切りで入力
-    -#   = f.text_field :tag_list
+        %check-box-label{for: "recipe_test_ビーガン"} ビーガン    
+    .form-group      
+      %tag-text-list{for: "recipe_tag_list"} タグをカンマ区切りで入力
+      = f.text_field :tag_list
   = f.submit "Post", class: "btn btn-primary"
 :javascript
   $('#recipe_picture').bind('change', function() {
@@ -36,6 +35,4 @@
       alert('写真サイズは5MBまでとなっております。サイズを下げてください。');
     }
   });
-
-
 
