@@ -23,10 +23,11 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = current_user.recipes.build(recipe_params)
-    if @recipe.save
+    if @recipe.valid?
+      @recipe.save!
       flash[:success] = 'Recipe created!'
       @recipes = current_user.recipes
-      render :index
+      redirect_to repces_path
     else
       # redirect_back(fallback_location: current_user)
       render :new
@@ -50,14 +51,20 @@ class RecipesController < ApplicationController
 
   def liked
     # ここでcurrent_userをつかいたい、resoucesのそとでつかえないのか？
-    @user = User.first
+    @user = current_user
     @likes = Like.where(user_id: @user.id)
   end
 
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :content, :picture, tag_list: [])
+    params.permit!(:tag_list)
+    params.permit!(:tag_checkbox)
+    checkbox = params['tag_checkbox'].join(',')
+    tag_list = params['tag_list']
+    tag_list = [tag_list, checkbox].join(',')
+    hoge = params.permit(:title, :content, :picture)
+    hoge.to_h.merge({ tag_list: tag_list })
   end
 
   def correct_user
