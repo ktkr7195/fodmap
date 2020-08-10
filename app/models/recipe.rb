@@ -11,6 +11,12 @@ class Recipe < ApplicationRecord
   has_many :comments
   acts_as_taggable
 
+  # attr_accessible :tag_checkbox
+  attr_accessor :lactoce_free
+  attr_accessor :gluten_free
+  attr_accessor :vegetarian
+  attr_accessor :vegan
+
   private
 
   # validate the size of the uploaded picture

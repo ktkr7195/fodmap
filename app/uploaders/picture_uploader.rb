@@ -3,8 +3,15 @@ class PictureUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
   include CarrierWave::MiniMagick
-  process resize_to_limit: [360, 300]
+  # process resize_to_fit: [300, -1]
 
+  # process(:convert_to_jpg, quality: 30)
+  # def convert_to_jpg(_options = {})
+  #   manipulate! do |img|
+  #     img.format('jpg')
+  #     convert.resize!('100x100')
+  #   end
+  # end
   # Choose what kind of storage to use for this uploader:
   if Rails.env.production?
     storage :fog
