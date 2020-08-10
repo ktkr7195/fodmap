@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   root to: 'homes#index'
   get '/about', to: 'homes#about'
 
+  get 'recipes/liked', to: 'recipes#liked'
+
   # resources :recipes, only: %i[index create show destroy]
   resources :recipes do
     resources :comments, only: [:create, :destroy]

@@ -15,7 +15,7 @@
 
 # Ignore uploaded pictures
 /public/uploads/recipe/picture/
-/app/assets/images/sample_image.jpg
+/app/assets/images/*
 # Ignore uploaded files in development
 /storage/*
 
@@ -30,3 +30,5 @@
 
 # Ignore env
 /environments/db.env
+
+public/uploads/tmp/1596964366-10832-0001-8755/sample_image.jpg
