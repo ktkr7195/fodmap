@@ -12,7 +12,7 @@ User.create!(firstName: 'Takayuki',
              password_confirmation: 'password',
              confirmed_at: Time.now)
 
-10.times do |n|
+12.times do |n|
   firstName = Faker::Name.first_name
   lastName = Faker::Name.last_name
   email = "example-#{n + 1}@railstutorial.org"
@@ -33,10 +33,13 @@ followers = users[3..4]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
 
-users = User.order(:created_at).take(6)
-3.times do
-  picture = File.open('./app/assets/images/abocado toast.jpeg')
+users = User.order(:id).take(12)
+n = 1
+users.each do |user|
+  url = "./app/assets/images/test_#{n}.jpeg"
+  picture = File.open(url)
   title = Faker::Food.dish
   content = Faker::Food.description
-  users.each { |user| user.recipes.create!(picture: picture, title: title, content: content) }
+  user.recipes.create!(picture: picture, title: title, content: content)
+  n += 1
 end
