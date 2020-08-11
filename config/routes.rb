@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get '/about', to: 'homes#about'
 
   get 'recipes/liked', to: 'recipes#liked'
+  get 'recipes/search', to: 'recipes#search'
 
   # resources :recipes, only: %i[index create show destroy]
   resources :recipes do
