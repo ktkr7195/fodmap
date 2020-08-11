@@ -1,0 +1,14 @@
+%p 検索
+= form_tag(recipes_search_path,:method => 'get') do
+  = text_field_tag :search
+  = submit_tag 'Search', :name => nil
+- @recipes.each_slice(3) do |recipes|
+  .row
+    - recipes.each do |recipe|
+      .col-md-4
+        .recipe
+          .image_wrapper
+            = link_to recipe do
+              = image_tag recipe.picture.url if recipe.picture?
+          %h2= link_to recipe.title, recipe
+          = render 'likes/like', recipe: recipe      

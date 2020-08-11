@@ -17,6 +17,12 @@ class Recipe < ApplicationRecord
   attr_accessor :vegetarian
   attr_accessor :vegan
 
+  def self.search(search)
+    return Recipe.all unless search
+
+    Recipe.where(['title LIKE ?', "%#{search}%"]).or(Recipe.where(['content LIKE ?', "%#{search}%"]))
+  end
+
   private
 
   # validate the size of the uploaded picture

@@ -54,9 +54,13 @@ class RecipesController < ApplicationController
   end
 
   def liked
-    # ここでcurrent_userをつかいたい、resoucesのそとでつかえないのか？
     @user = current_user
     @likes = Like.where(user_id: @user.id)
+  end
+
+  def search
+    # Viewのformで取得したパラメータをモデルに渡す
+    @recipes = Recipe.search(params[:search])
   end
 
   private
