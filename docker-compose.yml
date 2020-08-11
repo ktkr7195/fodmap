@@ -11,8 +11,8 @@ services:
       - public-data:/webapp/public
       - tmp-data:/webapp/tmp
       - log-data:/webapp/log
-    environment: 
-      RAILS_ENV: production  
+    # environment: 
+    #   RAILS_ENV: production  
     depends_on:
       - db
   db:
