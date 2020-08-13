@@ -5,14 +5,15 @@ services:
       context: .
     env_file:
       - ./environments/db.env
-    command: bundle exec puma -C config/puma.rb
+    # command: bundle exec puma -C config/puma.rb
+    command: bundle exec puma -e production -C config/puma.rb
     volumes:
       - .:/webapp
       - public-data:/webapp/public
       - tmp-data:/webapp/tmp
       - log-data:/webapp/log
-    # environment: 
-    #   RAILS_ENV: production  
+    environment: 
+      RAILS_ENV: production  
     depends_on:
       - db
   db:

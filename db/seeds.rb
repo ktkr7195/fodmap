@@ -35,11 +35,22 @@ followers.each { |follower| follower.follow(user) }
 
 users = User.order(:id).take(12)
 n = 1
-users.each do |user|
-  url = "./app/assets/images/test_#{n}.jpeg"
-  picture = File.open(url)
-  title = Faker::Food.dish
-  content = Faker::Food.description
-  user.recipes.create!(picture: picture, title: title, content: content)
-  n += 1
+if Rails.env.production?
+  users.each do |user|
+    # url = "./app/assets/images/test_#{n}.jpeg"
+    # picture = File.open(url)
+    title = Faker::Food.dish
+    content = Faker::Food.description
+    user.recipes.create!(title: title, content: content)
+    n += 1
+  end
+else
+  users.each do |user|
+    url = "./app/assets/images/test_#{n}.jpeg"
+    picture = File.open(url)
+    title = Faker::Food.dish
+    content = Faker::Food.description
+    user.recipes.create!(picture: picture, title: title, content: content)
+    n += 1
+  end
 end
