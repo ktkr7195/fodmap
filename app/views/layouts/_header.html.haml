@@ -4,18 +4,22 @@
       %a.logo{:href => "/"}
         %img{:alt => "test", :src => "/assets/abdomon.jpg"}/
       %li
-        = link_to 'FODMAPについて', about_path      
+        = link_to 'FODMAPについて', about_path 
       - if user_signed_in?
         %li
           = link_to '自分のレシピ', recipes_path
         %li
-          = link_to 'お気に入り', recipes_liked_path  
+          = link_to 'お気に入り', recipes_liked_path
         %li
-          = link_to '検索', recipes_search_path  
+          = link_to " マイページ  ", "/user/#{current_user.id}"  
       %li.login
-        - if user_signed_in?
-          %span= link_to " マイページ  ", "/user/#{current_user.id}"
+        - if user_signed_in?          
           = link_to 'ログアウト', destroy_user_session_path, method: :delete
         - else
           = link_to 'サインアップ', new_user_registration_path
           = link_to 'ログイン', new_user_session_path
+      %li                            
+        .search-input
+          = form_tag(recipes_search_path,:method => 'get') do
+            = text_field_tag :search, "", placeholder: 'キーワード'            
+            = submit_tag '検索', class:'bg-darkgrey', :name => nil

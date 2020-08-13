@@ -1,47 +1,104 @@
-// Place all the styles related to the Homes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-.top-menu {
-  background-color: #e6e7e8;
-  height: 100px;
-    .navbar-nav {  
-      display: -webkit-flex;
-      display: flex;
-      -webkit-justify-content: flex-start;
-      justify-content: flex-start;
-        li {
-          padding: 20px;
-        }
-        li a {
-          height: 50px;
-          display: inline-block;
-          color: #1e1934;
-          font-family: HelveticaNeueW01-67MdCn_692710,Arial,serif;
-          font-size: 15px;
-          text-decoration: none;
-          padding: 15px 0;
-          margin: 0;
-        }
-        li:nth-of-type(1)  {
-          padding-left: 20px;
-          margin-left: auto; 
-        }
-    }        
+.main {
+  background-color: #06921199;
+  width: auto;
+  margin-top: -20px;
+  text-align: center;
+  min-height: 30rem;
+  position: relative;
+  display: table;
+  width: 100%;
+  height: auto;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%), asset-url("abdomon.gif");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.wrapper {
-  display: block;
-  max-width: 1200px;
-  padding: 0 0;
-  margin: auto;
-  box-sizing: border-box;
+.main-title {
+  margin-bottom: 20px;
+  margin-top: 0px;
 }
 
-.logo{
-  img {
-    height: 100px;
-    padding: 5px 0;
+.btn-dark {
+  background-color: #25a84a;
+  a {
+    color: white;
   }
 }
+
+
+.page-content {
+  .about-wrapper {
+    display: block;
+    max-width: 1200px;
+    padding: 0 0;
+    margin: auto;
+    box-sizing: border-box;
+  }
+  .rich-text {
+    width: 100%;
+  }  
+  h2 {
+    font-size: 34px;
+    line-height: 40px;
+    color: #149fda;
+    margin-bottom: 20px;
+    font-family: HelveticaNeueW01-47LtCn_692686,Arial,serif;
+    margin-top: 35px;
+  }
+}
+.row.right {
+  width: 100%;
+  .rich-text {
+    display: block;
+    width: 100%;
+    padding: 25px 40px;
+    background-color: #27c2b6;
+    margin-bottom: 20px;
+    height: 96px;
+    h3 {
+      color: white;
+      font-family: HelveticaNeueW01-47LtCn_692686,Arial,serif;
+      width: 340px;
+      display: inline-block;
+      font-size: 37px;
+      margin: 0;
+      vertical-align: top;
+      span {
+        color: #149fda;
+      }
+    }
+    p {
+      color: #fff;
+      display: inline-block;
+      font-family: HelveticaNeueW01-57Cn,Arial,serif;
+      width: calc((100% - 350px));
+      padding-right: 150px;
+      margin: 0;
+      min-height: 40px;
+      font-size: 18px;
+    }
+  }
+}  
+
+.register-section {
+  background-color: #06921199;
+  width: auto;
+  margin-top: 20px;
+  text-align: center;
+  min-height: 30rem;
+  position: relative;
+  display: table;
+  width: 100%;
+  height: auto;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%), url(/assets/abdomon-fc7b285….gif);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
