@@ -6,6 +6,17 @@
   -# = paginate @feed_items
   = render partial: 'recipes/recipe'
   = paginate @recipes
-- else
-  %h2 ログインしてください
-  = link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post
+- else     
+  .main
+    .row.left
+      %h1.page-title Happy Gut
+      .rich-text
+        %p 低FODMAPレシピ共有アプリ
+      %button.btn.btn-dark{type: "button"}
+        = link_to 'ログイン', new_user_session_path
+      %button.btn.btn-warning{type: "button"}            
+        = link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post        
+  = render partial: 'about-ibs'
+  = render partial: 'about-fodmap'
+  = render partial: 'register-form'
+    

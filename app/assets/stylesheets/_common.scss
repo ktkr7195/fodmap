@@ -10,6 +10,9 @@
   background-color: black;
   color: #14d814;
 }
+.bg-darkgrey {
+  background-color: darkgray;
+}
 
 
 label {
@@ -30,8 +33,9 @@ label {
 
 
 .top-menu {
-  background-color: #e6e7e8;
+  background-color: white;
   height: 100px;
+  margin-bottom: 20px;
     .navbar-nav {  
       display: -webkit-flex;
       display: flex;
@@ -54,6 +58,9 @@ label {
           padding-left: 20px;
           margin-left: auto; 
         }
+    }
+    .search-input form {
+      display: flex;
     }        
 }
 
