@@ -38,9 +38,9 @@ gem 'acts-as-taggable-on'
 # AWS
 # gem 'aws-ses'
 
-  gem 'fog', '1.42'
-  # Use Puma as the app server
-  gem 'puma', '~> 3.11'
+gem 'fog', '1.42'
+# Use Puma as the app server
+gem 'puma', '~> 3.11'
 
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
@@ -84,6 +84,7 @@ group :development do
   gem 'rubocop', require: false
   gem 'rubocop-rails'
   gem 'spring'
+  gem 'spring-commands-rspec'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
