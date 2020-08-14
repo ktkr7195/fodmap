@@ -27,6 +27,10 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :email, uniqueness: true
 
+  def name
+    [firstName, lastName].join(' ')
+  end
+
   def feed
     following_ids = "SELECT followed_id FROM relationships
     WHERE follower_id = :user_id"
