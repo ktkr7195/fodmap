@@ -28,6 +28,10 @@
   }
 }
 
+.icon {
+  color: #27c2b6;
+}
+
 
 .page-content {
   .about-wrapper {
@@ -85,8 +89,7 @@
 
 .register-section {
   background-color: #06921199;
-  width: auto;
-  margin-top: 20px;
+  width: auto;  
   text-align: center;
   min-height: 30rem;
   position: relative;
@@ -101,4 +104,88 @@
   background-size: cover;
 }
 
+
+.content-section {
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+  .section-about {    
+    display: flex;    
+    padding: 0 60px;
+    justify-content: center;
+    font-size: 21px;
+    margin-bottom: 20px;
+    img {
+      max-width: 300px;
+    }
+    p {
+      margin-left: 20px;
+      text-align: left;
+    }
+  }
+  .section-service {
+    p {
+      padding: 0 30px;
+    }
+  }
+}
+
+.category {
+  margin: 40px; 
+  a {
+    display: block;    
+    cursor: pointer;
+    text-decoration: none;
+  }
+  a:hover {
+    transition: .3s;
+    text-decoration: none;
+    opacity: .9;
+  }
+  .category-wrapper {  
+    height: 130px;
+  }  
+  .category-bg-img1{    
+    height: 130px;    
+    background-image: url(https://www.healthline.com/hlcmsresource/images/AN_images/healthy-eating-ingredients-1200x628-facebook.jpg);
+    background-position: center;
+    background-repeat: no-repeat;    
+    background-size: cover;
+  }
+  .category-bg-img2{    
+    height: 130px;    
+    background-image: url(https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/slideshows/foods_for_circulation_slideshow/1800x1200_foods_for_circulation_slideshow.jpg);
+    background-position: center;
+    background-repeat: no-repeat;    
+    background-size: cover;
+  }
+  .category-bg-img3{    
+    height: 130px;    
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRvxAJcSQRs2u2vkyS5GoKLm66Op0CqWt0rjg&usqp=CAU);
+    background-position: center;
+    background-repeat: no-repeat;    
+    background-size: cover;
+  }
+  .category-bg-img4{    
+    height: 130px;    
+    background-image: url(https://i.insider.com/5ea9a9e0d553f817a1546be6?width=1100&format=jpeg&auto=webp);
+    background-position: center;
+    background-repeat: no-repeat;    
+    background-size: cover;
+  }
+  .category-txt {
+    position: relative;
+    top: 34%;
+    width: 100%;    
+    font: 600 20px/42px "Hiragino Maru Gothic ProN", "ヒラギノ丸ゴ Pro W4", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Arial, Helvetica, sans-serif;
+    letter-spacing: 0.1em;
+    color: white;
+    text-align: center;
+  }
+}
+
+.loged-in-category {
+  background-color: #dff0d8;
+  margin-top: -20px;
+  margin-bottom: 50px;
+}
 

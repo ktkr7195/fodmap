@@ -9,10 +9,11 @@ input {
 
 .content-form {
   margin-top: 50px;
-  padding-bottom: 80px;
-    form {
+  padding: 0 10px 80px;
+  form {
+    margin-bottom: 20px;
     overflow: auto;
-    width: 600px;
+    // width: 600px;    
     }
 }
 

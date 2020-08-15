@@ -29,6 +29,21 @@ label {
 .text-center {
   text-align: center;
 }
+.mb-30 {
+  margin-bottom: 30px;
+}
+.bg-white {
+  background-color: white;
+}
+
+.btn-red {
+  color: white;
+  background-color: #e50914; 
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
 
 
 
@@ -66,10 +81,12 @@ label {
 
 .banner {
   height: 270px;
-  background-color: #1e1934;
+  background-color: #27c2b6;
+  margin-top: -20px;
   .wrapper {
     height: 290px;
     padding: 103px 0;
+    text-align: center;
   }
   .wrapper:after {
     content: "";
