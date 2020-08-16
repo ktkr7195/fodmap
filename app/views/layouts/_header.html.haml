@@ -4,7 +4,7 @@
       %a.logo{:href => "/"}
         %img{:alt => "test", :src => "/assets/abdomon.jpg"}/
       %li
-        = link_to 'Happy Gutとは', about_path 
+        = link_to 'IBSとは', about_path 
       - if user_signed_in?
         %li.header-hide
           = link_to 'レシピを作成', new_recipe_path
@@ -16,7 +16,7 @@
         %li.header-hide          
           = link_to 'ログアウト', destroy_user_session_path, method: :delete
       - else
-        %li.header-hide.login
+        %li.header-hide.login.padding-2
           = link_to 'サインアップ', new_user_registration_path
           = link_to 'ログイン', new_user_session_path
       %li.dropdown.login

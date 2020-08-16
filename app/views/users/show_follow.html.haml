@@ -1,21 +1,50 @@
 - provide(:title, @title)
-.row
-  %aside.col-md-4
-    %section.user_info
+-# .container
+-#   .row
+-#     %aside.col-md-4
+-#       %section.user_info
+-#         = gravatar_for @user
+-#         %h1= @user.firstName        
+-#         %span
+-#           = @user.recipes.count
+-#           %b recipes
+-#       %section.stats
+-#         = render 'shared/stats'
+-#         - if @users.any?
+-#           .user_avatars
+-#             - @users.each do |user|
+-#               = link_to gravatar_for(user), user
+-#     .col-md-8
+-#       %h3= @title
+-#       - if @users.any?
+-#         %ul.users.follow
+-#           = render 'shared/users_list'
+
+.container.text-center
+  .user-profile
+    .profile-left  
       = gravatar_for @user
-      %h1= @user.firstName
-      %span= link_to "view my profile", @user
-      %span
-        %b recipes:
-        = @user.recipes.count
-    %section.stats
-      = render 'shared/stats'
-      - if @users.any?
-        .user_avatars
-          - @users.each do |user|
-            = link_to gravatar_for(user), user
-  .col-md-8
-    %h3= @title
+    .profile-right
+      .profile-right-top
+        .profile-name  
+          = @user.firstName+@user.lastName
+        - if @user.id === current_user.id
+          .profile-edit  
+            = link_to 'プロフィール変更', edit_user_registration_path
+        - else
+          .ml-20
+            = render 'shared/follow_form' if user_signed_in?
+      %section.stats
+        .recipes-count
+          %strong
+            = @user.recipes.count
+          recipes
+        = render 'shared/stats'
+  .follow-lists-wrapper.text-center
+    .follow-lists-title    
+      %h3
+        = @title
     - if @users.any?
-      %ul.users.follow
-        = render 'shared/users_list'
+      .follow-users-lists
+        %ul.users.follow          
+          = render 'shared/users_list'  

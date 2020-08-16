@@ -53,15 +53,14 @@
     margin-top: 35px;
   }
 }
-.row.right {
+.right {
   width: 100%;
   .rich-text {
     display: block;
     width: 100%;
     padding: 25px 40px;
     background-color: #27c2b6;
-    margin-bottom: 20px;
-    height: 96px;
+    margin-bottom: 20px;    
     h3 {
       color: white;
       font-family: HelveticaNeueW01-47LtCn_692686,Arial,serif;
@@ -78,8 +77,7 @@
       color: #fff;
       display: inline-block;
       font-family: HelveticaNeueW01-57Cn,Arial,serif;
-      width: calc((100% - 350px));
-      padding-right: 150px;
+      width: calc((100% - 350px));      
       margin: 0;
       min-height: 40px;
       font-size: 18px;

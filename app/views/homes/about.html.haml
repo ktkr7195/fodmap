@@ -1,2 +1,5 @@
-= render partial: 'about-fodmap'
 = render partial: 'about-ibs'
+= render partial: 'about-fodmap'
+= render partial: 'about-low-fodmap-diet'
+- unless user_signed_in?
+  = render partial: 'register-form'
