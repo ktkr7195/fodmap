@@ -1,3 +1,7 @@
 - @users.each do |user|
-  %li
-    = link_to user.firstName, "/user/#{user.id}"
+  .follow-user
+    .follow-user-image
+      = gravatar_for user
+    .follow-user-name
+      %li
+        = link_to user.name, "/user/#{user.id}"

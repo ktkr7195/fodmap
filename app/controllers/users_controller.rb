@@ -7,14 +7,14 @@ class UsersController < ApplicationController
   end
 
   def following
-    @title = 'Following'
+    @title = 'フォローしている'
     @user  = User.find(params[:id])
     @users = @user.following
     render 'show_follow'
   end
 
   def followers
-    @title = 'Followers'
+    @title = 'フォローされている'
     @user  = User.find(params[:id])
     @users = @user.followers
     render 'show_follow'

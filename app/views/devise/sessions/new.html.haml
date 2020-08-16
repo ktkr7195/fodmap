@@ -7,18 +7,20 @@
 .content        
   .content-form.wrapper
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .field
+      .field.mb-15
         = f.label :email
         %br/
         = f.email_field :email, autofocus: true, autocomplete: "email"
-      .field
+      .field.mb-15
         = f.label :password
         %br/
         = f.password_field :password, autocomplete: "current-password"
       - if devise_mapping.rememberable?
-        .field
-          = f.check_box :remember_me
-          = f.label :remember_me
+        .field.mb-15.d-flex
+          .remember-check
+            = f.check_box :remember_me
+          .remember-text  
+            = f.label :remember_me
       .actions
         %button.btn.btn-red{type: "button"}
           = f.submit "ログイン"
