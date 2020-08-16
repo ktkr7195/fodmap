@@ -1,38 +1,55 @@
-= form_for(@recipe) do |f|
-  = render 'shared/error_messages', model: f.object
-  = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png'
-  .field
-    = f.text_field :title, placeholder: "タイトル(ex. カレー)"
-    = f.text_area :content, placeholder: recipe_sample
-  .field
-    .tag-title
-      %h3
-        レシピのカテゴリーを選択してください。    
-    .form-check    
-      = f.check_box :lactoce_free, { :multiple => true }, 'ラクトースフリー', nil
-      .tag-title
-        %check-box-label{for: "recipe_test_ラクトースフリー"} ラクトースフリー
-    .form-check
-      = f.check_box :gluten_free, { :multiple => true }, 'グルテンフリー', nil
-      .tag-title
-        %check-box-label{for: "recipe_test_グルテンフリー"} グルテンフリー
-    .form-check  
-      = f.check_box :vegetarian, { :multiple => true }, 'ベジタリアン', nil
-      .tag-title
-        %check-box-label{for: "recipe_test_ベジタリアン"} ベジタリアン
-    .form-check  
-      = f.check_box :vegan, { :multiple => true }, 'ビーガン', nil
-      .tag-title
-        %check-box-label{for: "recipe_test_ビーガン"} ビーガン    
-    .form-group      
-      %tag-text-list{for: "recipe_tag_list"} タグをカンマ区切りで入力
-      = f.text_field :tag_list
-  = f.submit "Post", class: "btn btn-primary"
-:javascript
-  $('#recipe_picture').bind('change', function() {
-    var size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 5) {
-      alert('写真サイズは5MBまでとなっております。サイズを下げてください。');
-    }
-  });
+.container
+  .new-recipe-wrapper
+    = form_for(@recipe) do |f|
+      = render 'shared/error_messages', model: f.object
+      .recipe-pic-box
+        - if @recipe.picture.url
+          = image_tag @recipe.picture.url
+        - else
+          %img{alt: "no image", src: "https://upload.wikimedia.org/wikipedia/commons/0/0a/No-image-available.png"}/
+        .recipe-img-upload
+          = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png'
+          %p
+            画像サイズは５MBまで
+      .field
+        .recipe-title
+          %h3
+            レシピのタイトル
+          = f.text_field :title, placeholder: "タイトル(ex. カレー)"
+        .recipe-description
+          %h3
+            レシピの説明
+          = f.text_area :content, placeholder: recipe_sample
+      .field
+        .recipe-category-checkbox        
+          %h3
+            レシピのカテゴリーを選択してください。    
+          .form-check    
+            = f.check_box :lactoce_free, { :multiple => true }, 'ラクトースフリー', nil
+            .tag-title
+              %check-box-label{for: "recipe_test_ラクトースフリー"} ラクトースフリー
+          .form-check
+            = f.check_box :gluten_free, { :multiple => true }, 'グルテンフリー', nil
+            .tag-title
+              %check-box-label{for: "recipe_test_グルテンフリー"} グルテンフリー
+          .form-check  
+            = f.check_box :vegetarian, { :multiple => true }, 'ベジタリアン', nil
+            .tag-title
+              %check-box-label{for: "recipe_test_ベジタリアン"} ベジタリアン
+          .form-check  
+            = f.check_box :vegan, { :multiple => true }, 'ビーガン', nil
+            .tag-title
+              %check-box-label{for: "recipe_test_ビーガン"} ビーガン
+        -# Rondom tags seem confusing for users at the moment    
+        -# .form-group      
+        -#   %tag-text-list{for: "recipe_tag_list"} タグをカンマ区切りで入力
+        -#   = f.text_field :tag_list
+      = f.submit "Post", class: "btn btn-primary"
+    :javascript
+      $('#recipe_picture').bind('change', function() {
+        var size_in_megabytes = this.files[0].size/1024/1024;
+        if (size_in_megabytes > 5) {
+          alert('写真サイズは5MBまでとなっております。サイズを下げてください。');
+        }
+      });
 

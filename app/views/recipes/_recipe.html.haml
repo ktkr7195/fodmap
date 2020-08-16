@@ -9,13 +9,11 @@
 -#     %span.timestamp
 -#       = link_to "delete", recipe, method: :delete, data: { confirm: "You sure?" }
 
-- @recipes.each_slice(3) do |recipes|
-	.row
-		- recipes.each do |recipe|
-			.col-md-4
-				.recipe
-					.image_wrapper
-						= link_to recipe do
-							= image_tag recipe.picture.url if recipe.picture?
-					%h2= link_to recipe.title, recipe
-					= render 'likes/like', recipe: recipe
+- @recipes.each do |recipe|
+	.col-lg-4.col-md-6
+		.recipe
+			.image_wrapper
+				= link_to recipe do
+					= image_tag recipe.picture.url if recipe.picture?
+			%h2= link_to recipe.title, recipe
+			= render 'likes/like', recipe: recipe

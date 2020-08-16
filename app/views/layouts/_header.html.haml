@@ -4,22 +4,66 @@
       %a.logo{:href => "/"}
         %img{:alt => "test", :src => "/assets/abdomon.jpg"}/
       %li
-        = link_to 'FODMAPについて', about_path 
+        = link_to 'Happy Gutとは', about_path 
       - if user_signed_in?
-        %li
-          = link_to '自分のレシピ', recipes_path
-        %li
+        %li.header-hide
+          = link_to 'レシピを作成', new_recipe_path
+        %li.header-hide
           = link_to 'お気に入り', recipes_liked_path
-        %li
-          = link_to " マイページ  ", "/user/#{current_user.id}"  
-      %li.login
-        - if user_signed_in?          
+        %li.header-hide
+          = link_to " マイページ  ", "/user/#{current_user.id}"        
+      - if user_signed_in?
+        %li.header-hide          
           = link_to 'ログアウト', destroy_user_session_path, method: :delete
-        - else
+      - else
+        %li.header-hide.login
           = link_to 'サインアップ', new_user_registration_path
           = link_to 'ログイン', new_user_session_path
-      %li                            
-        .search-input
-          = form_tag(recipes_search_path,:method => 'get') do
-            = text_field_tag :search, "", placeholder: 'キーワード'            
-            = submit_tag '検索', class:'bg-darkgrey', :name => nil
+      %li.dropdown.login
+        %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#", role: "button"}
+          %i.fa.fa-bars.fa-4x{"aria-hidden" => "true"}          
+        %ul.dropdown-menu
+          - if user_signed_in?
+            %li
+              = link_to 'レシピ検索', recipes_search_path
+            %li
+              = link_to 'レシピを作成', new_recipe_path
+            %li
+              = link_to 'お気に入り', recipes_liked_path
+            %li
+              = link_to " マイページ  ", "/user/#{current_user.id}" 
+            %li 
+              = link_to 'ログアウト', destroy_user_session_path, method: :delete              
+          - else
+            %li
+              = link_to 'サインアップ', new_user_registration_path
+            %li
+              = link_to 'ログイン', new_user_session_path
+      - if user_signed_in?    
+        %li                            
+          .search-input
+            = form_tag(recipes_search_path,:method => 'get') do
+              = text_field_tag :search, "", placeholder: 'キーワード'            
+              = submit_tag '検索', class:'bg-darkgrey', :name => nil
+:javascript
+  var checkWidth = function() {
+    var browserWidth = $(window).width();        
+    if(browserWidth <= 1050){      
+      $('.header-hide').hide();
+      $('.gut-image').hide();
+      $('.search-input').hide();
+      $('.dropdown').show();
+    } else {
+      $('.header-hide').show();
+      $('.gut-image').show();
+      $('.search-input').show();
+      $('.dropdown').hide();
+    }
+  };
+  
+  $(function(){
+    checkWidth();
+    $(window).resize(checkWidth);
+  });
+
+                  

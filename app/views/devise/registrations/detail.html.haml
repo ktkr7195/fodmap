@@ -1,11 +1,24 @@
 - provide(:title, @user.firstName+@user.lastName)
-%section.stats
-  = render 'shared/stats'
-= render 'shared/follow_form' if user_signed_in?
-.wrapper
-  = link_to 'プロフィール変更', edit_user_registration_path
-  %h1
-    = gravatar_for @user
-    = @user.firstName+@user.lastName
-  = render 'recipes/recipe'
-  = paginate @recipes
+.container.text-center
+  .user-profile
+    .profile-left  
+      = gravatar_for @user
+    .profile-right
+      .profile-right-top
+        .profile-name  
+          = @user.firstName+@user.lastName
+        - if @user.id === current_user.id
+          .profile-edit  
+            = link_to 'プロフィール変更', edit_user_registration_path
+        - else
+          .ml-20
+            = render 'shared/follow_form' if user_signed_in?
+      %section.stats
+        .recipes-count
+          %strong
+            = @recipes.count
+          recipes
+        = render 'shared/stats'      
+  .wrapper.profile-recipes        
+    = render 'recipes/recipe'
+    = paginate @recipes

@@ -1,41 +1,42 @@
-.main_content
-	#recipe_top.row
-		.col-md-4
-			= image_tag @recipe.picture.url, class: "recipe_image" if @recipe.picture.url
-		.col-md-8
-			#recipe_info
-				%h1= @recipe.title
-				%p.description= @recipe.content
-				%p
-					Submitted by
-					= link_to @recipe.user.firstName, "/user/#{@recipe.user_id}"					
-	.row
-		%p
-			タグ: #{raw(@recipe.tag_list.map { |t| link_to t, tag_path(t) }.join(', '))}			
-		.col-md-12
-			= link_to "Back", :back, class: "btn btn-default"
-			- if current_user.id === @recipe.user_id
-				= link_to "Edit", edit_recipe_path, class: "btn btn-default"
-				= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
-	.comment-wrapper{class: "border-top　mb-10"}
-		%p.mt-5 コメント一覧
-		- @comments.each do |c|
-			%div
-				= c.content
-				- if c.content
-					- if c.user_id === current_user.id
-						%p= link_to "削除", recipe_comment_path(c.recipe_id, c.id), method: :delete
-				- unless c.user.blank?
-					-# %a{href: "#{user_path(c.user_id)}"}= image_tag c.user.image.to_s,                |
-					-# 		class:"rounded-circle icon_image mr-3 mb-3" |
+.container
+	.main_content
+		#recipe_top.row
+			.col-md-4
+				= image_tag @recipe.picture.url, class: "recipe_image" if @recipe.picture.url
+			.col-md-8
+				#recipe_info
+					%h1= @recipe.title
+					%p.description= @recipe.content
 					%p
-						投稿者
-						= c.user.firstName unless c.user.blank?									
-				%br/				
-			%br/
-		- if user_signed_in?
-			= form_with(model: [@recipe, @comment], local: true) do |f|
-				= f.text_area :content, class: "form-control", rows: 5
-				= button_tag type: "submit", class: "btn btn-success float-right mt-1" do
-					%i.far.fa-comments
-					コメントする
+						Submitted by
+						= link_to @recipe.user.firstName, "/user/#{@recipe.user_id}"					
+		.row
+			%p
+				タグ: #{raw(@recipe.tag_list.map { |t| link_to t, tag_path(t) }.join(', '))}			
+			.col-md-12
+				= link_to "Back", :back, class: "btn btn-default"
+				- if current_user.id === @recipe.user_id
+					= link_to "Edit", edit_recipe_path, class: "btn btn-default"
+					= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
+		.comment-wrapper{class: "border-top　mb-10"}
+			%p.mt-5 コメント一覧
+			- @comments.each do |c|
+				%div
+					= c.content
+					- if c.content
+						- if c.user_id === current_user.id
+							%p= link_to "削除", recipe_comment_path(c.recipe_id, c.id), method: :delete
+					- unless c.user.blank?
+						-# %a{href: "#{user_path(c.user_id)}"}= image_tag c.user.image.to_s,                |
+						-# 		class:"rounded-circle icon_image mr-3 mb-3" |
+						%p
+							投稿者
+							= c.user.firstName unless c.user.blank?									
+					%br/				
+				%br/
+			- if user_signed_in?
+				= form_with(model: [@recipe, @comment], local: true) do |f|
+					= f.text_area :content, class: "form-control", rows: 5
+					= button_tag type: "submit", class: "btn btn-success float-right mt-1" do						
+						%i.fa.fa-comments-o
+						コメントする

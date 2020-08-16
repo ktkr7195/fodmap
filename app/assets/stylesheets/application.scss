@@ -20,6 +20,32 @@
 @import "form_element";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+
+@media (min-width: 768px) {
+	.navbar-nav {
+    float: none;
+    margin: 0;
+	}
+}
+
+@media (max-width: 1065px) {
+	.recipe-img-upload {
+    margin-left: 0 !important;
+    margin-top: 20px !important;
+	}
+	.recipe-pic-box {        
+    display: block !important;
+	}
+	.new-recipe-wrapper {
+    padding: 0 !important;
+	}
+}
+
+.top-menu .navbar-nav li:nth-of-type(1) {	
+	margin-left: 0;
+}
+
 
 @mixin box-shadow {
 	-webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
@@ -31,6 +57,8 @@ $red: #333;
 
 body {
 	background: rgb(235, 238, 243);
+	background-color: #fafafa;
+	color: #757c7b;
 }
 
 .main_content {
@@ -62,6 +90,11 @@ body {
 	}
 }
 
+.login {
+	margin-left: auto;
+	padding: 0 !important;
+}
+
 // =============================================================================
 // recipe
 // =============================================================================
@@ -70,8 +103,7 @@ body {
 	border-radius: 30px;
 	margin-bottom: 40px;
 	@include box-shadow;
-	.image_wrapper {
-		width: 360px;
+	.image_wrapper {		
 		height: 300px;
 		// max-width: 100%;
 		// max-height: 100%;
@@ -143,6 +175,41 @@ body {
 	}
 }
 
+.new-recipe-wrapper {
+	padding: 0 130px;
+}
+
+.recipe-pic-box {
+	display: flex;
+	margin-bottom: 30px;
+	img {
+		max-height: 300px;
+	}
+}
+
+.recipe-img-upload {
+	margin-left: 20px;
+}
+
+.recipe-title {
+	margin-bottom: 50px;
+}
+
+.recipe-description {
+	margin-bottom: 50px;
+	textarea {
+		height: 300px;
+	}
+}
+
+.recipe-category-checkbox {
+	margin-bottom: 50px;
+}
+
+
+
+
+
 .form-inline {
 	margin-top: 15px;
 }
@@ -170,5 +237,61 @@ body {
 // end recipe
 // =============================================================================
 
+// =============================================================================
+// user profile
+// =============================================================================
+.user-profile {
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 50px;
+	a {
+		color: black;
+	}	
+	.profile-right {
+		.profile-name {
+			font-size: 28px;
+		}
+		.profile-edit {
+			margin-left: 30px;
+			padding: 8px;
+			background-color: transparent;
+			border: 1px solid #dbdbdb;
+			border: 1px solid rgba(var(--ca6,219,219,219),1);
+			color: #262626;		
+		}		
+		.profile-right-top {
+			display: flex;
+			margin-bottom: 10px;
+		}
+		.stats {
+			display: flex;
+			justify-content: center;
+			.recipes-count {
+				margin-right: 15px;
+				color: black;
+			}
+			.stats-second-child {
+				margin-left: 15px;
+			}
+		}
+	}
+}
+.profile-recipes {
+	margin-top: 30px;
+	border-top: 1px solid #dbdbdb;
+	padding-top: 20px;
+}
+// =============================================================================
+// end user profile
+// =============================================================================
 
-
+// =============================================================================
+// search
+// =============================================================================
+.search-top-input form {
+	display: flex;
+	margin-bottom: 50px;
+}
+// =============================================================================
+// end search
+// =============================================================================
