@@ -22,13 +22,6 @@
 @import "bootstrap";
 @import "font-awesome";
 
-@media (min-width: 768px) {
-	.navbar-nav {
-    float: none;
-    margin: 0;
-	}
-}
-
 @media (max-width: 1065px) {
 	.recipe-img-upload {
     margin-left: 0 !important;
@@ -47,18 +40,12 @@
 	}
 }
 
-.top-menu .navbar-nav li:nth-of-type(1) {	
-	margin-left: 0;
-}
-
-
 @mixin box-shadow {
 	-webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
 	-moz-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
 	box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
 }
 
-$red: #333;
 
 body {
 	background: rgb(235, 238, 243);
@@ -80,25 +67,118 @@ body {
 	font-weight: bold;
 }
 
-.navbar {
-	margin-bottom: 50px;
-	@include box-shadow;
-	border: none;
-	.navbar-brand {
-		text-transform: uppercase;
-		letter-spacing: -1px;
-		font-weight: bold;
-		font-size: 25px;
+// =============================================================================
+// header
+// =============================================================================
+.headerbar {
+	font-size: 30px;
+	background-color: white;
+	margin-bottom: 50px;	
+}
+
+.logo {
+	margin-top: 0;
+	img {
+		height: 4em;
+		padding: 5px 0;
+	}
+}
+
+.main-nav {
+	list-style-type: none;
+	display: none;
+}
+
+.main-nav li {
+	text-align: center;
+	margin: 15px auto;
+	margin-left: auto;
+	.nav-links {
 		a {
-			color: $red;
+			color: #757c7b;
+			text-decoration: none;
 		}
 	}
 }
 
-.login {
-	margin-left: auto;
-	padding: 0 !important;
+.logo {
+	display: inline-block;
+	font-size: 22px;
+	margin-top: 10px;
+	margin-left: 20px;
 }
+
+.headerbar-toggle {
+	position: absolute;
+	top: 10px;
+	right: 23px;
+	cursor: pointer;
+	font-size: 24px;
+}
+
+.active {
+	display: block;
+	background-color:#80808052;
+}
+
+.search-input form {
+  display: flex;
+}      
+
+@media screen and (min-width: 1110px) {
+	.headerbar {
+		display: flex;			
+		align-items: center;
+		padding: 17px;
+		margin-bottom: 50px;
+		.main-nav {
+			display: flex;
+			font-size: 15px;
+			margin-right: 30px;
+			width: 100%;
+			.menu-group {
+				display: flex;
+				width: 100%;
+				.menu-left {
+					display: flex;
+				}
+				.menu-right {
+					margin-left: auto;
+				}
+			}			
+		}
+	}
+	.navbar-nav {
+    float: none;
+		margin: 0;
+		background-color: white;
+	}
+
+	.nav-links {
+			margin-left: 40px;
+			a {
+				color: #757c7b;
+				text-decoration: none;
+			}
+	}
+
+	.headerbar-toggle {
+			display: none;
+	}
+}
+
+@media screen and (max-width: 1110px) {
+	.search-dis-none {
+		display: none;
+	}
+	.gut-image {
+		display: none;
+	}
+}
+
+// =============================================================================
+// end header
+// =============================================================================
 
 // =============================================================================
 // recipe
@@ -134,7 +214,7 @@ body {
 		font-weight: normal;
 		line-height: 1.5;
 		a {
-			color: $red;
+			color: #333;
 		}
 	}
 }
@@ -161,7 +241,7 @@ body {
 	h1 {
 		font-size: 36px;
 		font-weight: normal;
-		color: $red;
+		color: #333;
 	}
 	.description {
 		color: #8A8A8A;
@@ -211,10 +291,6 @@ body {
 	margin-bottom: 50px;
 }
 
-
-
-
-
 .form-inline {
 	margin-top: 15px;
 }
@@ -238,6 +314,7 @@ body {
 .tag-title {
 	margin-left: -32px;
 }
+
 // =============================================================================
 // end recipe
 // =============================================================================
@@ -286,6 +363,7 @@ body {
 	border-top: 1px solid #dbdbdb;
 	padding-top: 20px;
 }
+
 // =============================================================================
 // end user profile
 // =============================================================================
@@ -296,7 +374,9 @@ body {
 .search-top-input form {
 	display: flex;
 	margin-bottom: 50px;
+	margin-top: 25px;
 }
+
 // =============================================================================
 // end search
 // =============================================================================
@@ -327,8 +407,6 @@ body {
 	}
 }
 
-
-
 // =============================================================================
 // end user follow
 // =============================================================================
@@ -337,14 +415,12 @@ body {
 // =============================================================================
 // user register
 // =============================================================================
-
 .remember-check {
 	margin-left: -42px;
 }
 .remember-text {
 	margin-left: -29px;
 }
-
 
 // =============================================================================
 // end user register

@@ -1,69 +1,102 @@
-.top-menu
-  .wrapper
-    %ul.nav.navbar-nav
-      %a.logo{:href => "/"}
-        %img{:alt => "test", :src => "/assets/abdomon.jpg"}/
-      %li
-        = link_to 'IBSとは', about_path 
-      - if user_signed_in?
-        %li.header-hide
-          = link_to 'レシピを作成', new_recipe_path
-        %li.header-hide
-          = link_to 'お気に入り', recipes_liked_path
-        %li.header-hide
-          = link_to " マイページ  ", "/user/#{current_user.id}"        
-      - if user_signed_in?
-        %li.header-hide          
-          = link_to 'ログアウト', destroy_user_session_path, method: :delete
-      - else
-        %li.header-hide.login.padding-2
-          = link_to 'サインアップ', new_user_registration_path
-          = link_to 'ログイン', new_user_session_path
-      %li.dropdown.login
-        %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#", role: "button"}
-          %i.fa.fa-bars.fa-4x{"aria-hidden" => "true"}          
-        %ul.dropdown-menu
-          - if user_signed_in?
-            %li
-              = link_to 'レシピ検索', recipes_search_path
-            %li
-              = link_to 'レシピを作成', new_recipe_path
-            %li
-              = link_to 'お気に入り', recipes_liked_path
-            %li
-              = link_to " マイページ  ", "/user/#{current_user.id}" 
-            %li 
-              = link_to 'ログアウト', destroy_user_session_path, method: :delete              
-          - else
-            %li
-              = link_to 'サインアップ', new_user_registration_path
-            %li
-              = link_to 'ログイン', new_user_session_path
-      - if user_signed_in?    
-        %li                            
-          .search-input
-            = form_tag(recipes_search_path,:method => 'get') do
-              = text_field_tag :search, "", placeholder: 'キーワード'            
-              = submit_tag '検索', class:'bg-darkgrey', :name => nil
-:javascript
-  var checkWidth = function() {
-    var browserWidth = $(window).width();        
-    if(browserWidth <= 1050){      
-      $('.header-hide').hide();
-      $('.gut-image').hide();
-      $('.search-input').hide();
-      $('.dropdown').show();
-    } else {
-      $('.header-hide').show();
-      $('.gut-image').show();
-      $('.search-input').show();
-      $('.dropdown').hide();
-    }
-  };
-  
-  $(function(){
-    checkWidth();
-    $(window).resize(checkWidth);
-  });
+-# .top-menu
+-#   .wrapper
+-#     %ul.nav.navbar-nav
+-#       %a.logo{:href => "/"}        
+-#         %img{:alt => "abdomon", :src => "https://happy-gut-fodmap.s3-ap-northeast-1.amazonaws.com/uploads/recipe/picture/abdomon-white-bg.jpg"}/
+-#       %li
+-#         = link_to 'IBSとは', about_path 
+-#       - if user_signed_in?
+-#         %li.header-hide
+-#           = link_to 'レシピを作成', new_recipe_path
+-#         %li.header-hide
+-#           = link_to 'お気に入り', recipes_liked_path
+-#         %li.header-hide
+-#           = link_to " マイページ  ", "/user/#{current_user.id}"        
+-#       - if user_signed_in?
+-#         %li.header-hide          
+-#           = link_to 'ログアウト', destroy_user_session_path, method: :delete
+-#       - else
+-#         %li.header-hide.login.padding-2
+-#           = link_to 'サインアップ', new_user_registration_path
+-#           = link_to 'ログイン', new_user_session_path
+-#       %li.dropdown.login
+-#         %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#", role: "button"}
+-#           %i.fa.fa-bars.fa-4x{"aria-hidden" => "true"}          
+-#         %ul.dropdown-menu
+-#           - if user_signed_in?
+-#             %li
+-#               = link_to 'レシピ検索', recipes_search_path
+-#             %li
+-#               = link_to 'レシピを作成', new_recipe_path
+-#             %li
+-#               = link_to 'お気に入り', recipes_liked_path
+-#             %li
+-#               = link_to " マイページ  ", "/user/#{current_user.id}" 
+-#             %li 
+-#               = link_to 'ログアウト', destroy_user_session_path, method: :delete              
+-#           - else
+-#             %li
+-#               = link_to 'サインアップ', new_user_registration_path
+-#             %li
+-#               = link_to 'ログイン', new_user_session_path
+-#       - if user_signed_in?    
+-#         %li.header-hide                          
+-#           .search-input
+-#             = form_tag(recipes_search_path,:method => 'get') do
+-#               = text_field_tag :search, "", placeholder: 'キーワード'            
+-#               = submit_tag '検索', class:'bg-darkgrey', :name => nil
 
-                  
+%nav.headerbar
+  %span#js-navbar-toggle.headerbar-toggle
+    %i.fa.fa-bars.fa-3x
+  %a.logo{:href => "/"}        
+    %img{:alt => "abdomon", :src => "https://happy-gut-fodmap.s3-ap-northeast-1.amazonaws.com/uploads/recipe/picture/abdomon-white-bg.jpg"}/
+  %ul#js-menu.main-nav
+    - if user_signed_in?
+      .menu-group
+        .menu-left
+          %li
+            .nav-links.pt-15
+              = link_to 'レシピ検索', recipes_search_path
+          %li
+            .nav-links.pt-15
+              = link_to 'レシピを作成', new_recipe_path
+          %li
+            .nav-links.pt-15
+              = link_to 'お気に入り', recipes_liked_path
+          %li
+            .nav-links.pt-15
+              = link_to " マイページ  ", "/user/#{current_user.id}" 
+          %li
+            .nav-links.pt-15 
+              = link_to 'ログアウト', destroy_user_session_path, method: :delete 
+        %li
+          .menu-right.search-dis-none
+            .nav-links 
+              .search-input
+                = form_tag(recipes_search_path,:method => 'get') do
+                  = text_field_tag :search, "", placeholder: 'キーワード'            
+                  = submit_tag '検索', class:'bg-darkgrey', :name => nil             
+    - else
+      .menu-group
+        .menu-left
+        .menu-right.d-flex
+          %li
+            .nav-links
+              = link_to 'サインアップ', new_user_registration_path
+          %li
+            .nav-links
+              = link_to 'ログイン', new_user_session_path
+
+
+:javascript
+  $( document ).ready(function() {
+    console.log("ready!")    
+    let mainNav = document.getElementById('js-menu');
+    let navBarToggle = document.getElementById('js-navbar-toggle');
+    console.log(mainNav)
+    navBarToggle.addEventListener('click', function () {
+      console.log("clicked!!")
+      mainNav.classList.toggle('active');
+    });
+  });
