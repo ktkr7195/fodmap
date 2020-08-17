@@ -7,4 +7,10 @@ module RecipesHelper
       ect..
     EOS
   end
+
+  # def recipe_content
+  #   <<-"EOS".strip_heredoc
+  #     #{@recipe.content}      
+  #   EOS
+  # end
 end

@@ -6,23 +6,23 @@
 			.col-md-8
 				#recipe_info
 					%h1= @recipe.title
-					%p.description= @recipe.content
-					%p
-						Submitted by
+					.description
+						= simple_format(h(@recipe.content))										
+						投稿者:
 						= link_to @recipe.user.firstName, "/user/#{@recipe.user_id}"					
 		.row
 			%p
 				タグ: #{raw(@recipe.tag_list.map { |t| link_to t, tag_path(t) }.join(', '))}			
-			.col-md-12
+			.col-md-12.mb-15
 				= link_to "Back", :back, class: "btn btn-default"
 				- if current_user.id === @recipe.user_id
 					= link_to "Edit", edit_recipe_path, class: "btn btn-default"
-					= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
+					= link_to "Delete", recipe_path, method: :delete, data: {confirm: "本当に削除してよろしいでしょうか？" }, class: "btn btn-default"
 		.comment-wrapper{class: "border-top　mb-10"}
 			%p.mt-5 コメント一覧
 			- @comments.each do |c|
 				%div
-					= c.content
+					= simple_format(h(c.content))					
 					- if c.content
 						- if c.user_id === current_user.id
 							%p= link_to "削除", recipe_comment_path(c.recipe_id, c.id), method: :delete

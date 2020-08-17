@@ -1,6 +1,6 @@
 .container
   .search-top-input
-    = form_tag(recipes_search_path,:method => 'get') do
+    = form_tag(recipes_search_path, data: {"turbolinks" => false}, :method => 'get') do
       = button_tag(type: "submit", class: "btn") do        
         %i.fa.fa-search.fa-2x.icon{"aria-hidden" => "true"}              
       = text_field_tag :search, "", placeholder: 'キーワード'                
