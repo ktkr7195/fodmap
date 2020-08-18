@@ -57,6 +57,9 @@
         .menu-left
           %li
             .nav-links.pb-15.pt-15
+              = link_to 'IBSとは', about_path
+          %li
+            .nav-links.pb-15.pt-15
               = link_to 'レシピ検索', recipes_search_path
           %li
             .nav-links.pb-15.pt-15
@@ -80,6 +83,9 @@
     - else
       .menu-group
         .menu-left
+          %li
+            .nav-links.pb-15.pt-15
+              = link_to 'IBSとは', about_path
         .menu-right.d-flex
           %li
             .nav-links
@@ -90,13 +96,10 @@
 
 
 :javascript
-  $( document ).ready(function() {
-    console.log("ready!")    
+  $( document ).ready(function() {    
     let mainNav = document.getElementById('js-menu');
-    let navBarToggle = document.getElementById('js-navbar-toggle');
-    console.log(mainNav)
-    navBarToggle.addEventListener('click', function () {
-      console.log("clicked!!")
+    let navBarToggle = document.getElementById('js-navbar-toggle');    
+    navBarToggle.addEventListener('click', function () {      
       mainNav.classList.toggle('active');
     });
   });
