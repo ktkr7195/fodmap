@@ -144,31 +144,67 @@
   }  
   .category-bg-img1{    
     height: 130px;    
-    background-image: url(https://www.healthline.com/hlcmsresource/images/AN_images/healthy-eating-ingredients-1200x628-facebook.jpg);
+    background-image: url(https://happy-gut-fodmap.s3-ap-northeast-1.amazonaws.com/uploads/recipe/picture/%E3%82%AF%E3%82%99%E3%83%AB%E3%83%86%E3%83%B3%E3%83%95%E3%83%AA%E3%83%BC.jpg);
     background-position: center;
     background-repeat: no-repeat;    
     background-size: cover;
+  }
+  .category-bg-img1::before {    
+    background-color: rgba(0,0,0,0.5);    
+    position: absolute;
+    top: 0;
+    right: 15px;
+    bottom: 0;
+    left: 15px;
+    content: ' ';
   }
   .category-bg-img2{    
     height: 130px;    
-    background-image: url(https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/slideshows/foods_for_circulation_slideshow/1800x1200_foods_for_circulation_slideshow.jpg);
+    background-image: url(https://happy-gut-fodmap.s3-ap-northeast-1.amazonaws.com/uploads/recipe/picture/%E3%83%A9%E3%82%AF%E3%83%88%E3%83%BC%E3%82%B9%E3%83%95%E3%83%AA%E3%83%BC.jpg);
     background-position: center;
     background-repeat: no-repeat;    
     background-size: cover;
+  }
+  .category-bg-img2::before {    
+    background-color: rgba(0,0,0,0.5);    
+    position: absolute;
+    top: 0;
+    right: 15px;
+    bottom: 0;
+    left: 15px;
+    content: ' ';
   }
   .category-bg-img3{    
     height: 130px;    
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRvxAJcSQRs2u2vkyS5GoKLm66Op0CqWt0rjg&usqp=CAU);
+    background-image: url(https://happy-gut-fodmap.s3-ap-northeast-1.amazonaws.com/uploads/recipe/picture/%E3%83%98%E3%82%99%E3%82%B7%E3%82%99%E3%82%BF%E3%83%AA%E3%82%A2%E3%83%B3.jpg);
     background-position: center;
     background-repeat: no-repeat;    
     background-size: cover;
   }
+  .category-bg-img3::before {    
+    background-color: rgba(0,0,0,0.5);    
+    position: absolute;
+    top: 0;
+    right: 15px;
+    bottom: 0;
+    left: 15px;
+    content: ' ';
+  }
   .category-bg-img4{    
     height: 130px;    
-    background-image: url(https://i.insider.com/5ea9a9e0d553f817a1546be6?width=1100&format=jpeg&auto=webp);
+    background-image: url(https://happy-gut-fodmap.s3-ap-northeast-1.amazonaws.com/uploads/recipe/picture/%E3%83%92%E3%82%99%E3%83%BC%E3%82%AB%E3%82%99%E3%83%B3.jpg);
     background-position: center;
     background-repeat: no-repeat;    
     background-size: cover;
+  }
+  .category-bg-img4::before {    
+    background-color: rgba(0,0,0,0.5);    
+    position: absolute;
+    top: 0;
+    right: 15px;
+    bottom: 0;
+    left: 15px;
+    content: ' ';
   }
   .category-txt {
     position: relative;
