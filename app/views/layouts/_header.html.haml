@@ -56,19 +56,19 @@
       .menu-group
         .menu-left
           %li
-            .nav-links.pt-15
+            .nav-links.pb-15.pt-15
               = link_to 'レシピ検索', recipes_search_path
           %li
-            .nav-links.pt-15
+            .nav-links.pb-15.pt-15
               = link_to 'レシピを作成', new_recipe_path
           %li
-            .nav-links.pt-15
+            .nav-links.pb-15.pt-15
               = link_to 'お気に入り', recipes_liked_path
           %li
-            .nav-links.pt-15
+            .nav-links.pb-15.pt-15
               = link_to " マイページ  ", "/user/#{current_user.id}" 
           %li
-            .nav-links.pt-15 
+            .nav-links.pb-15.pt-15 
               = link_to 'ログアウト', destroy_user_session_path, method: :delete 
         %li
           .menu-right.search-dis-none
