@@ -54,6 +54,7 @@ body {
 }
 
 .main_content {
+	margin-top: 40px;
 	padding: 0 0 50px 0;
 }
 
@@ -68,12 +69,32 @@ body {
 }
 
 // =============================================================================
+// flash
+// =============================================================================
+.notifications {
+	color: white;
+  text-align: center;
+}
+.notice {
+	background-color: #4dc392;
+	padding: 0.75rem 1.25rem;
+}
+.alert {
+  color: white;
+  background-color: red;
+}
+
+// =============================================================================
+// end flash
+// =============================================================================
+
+// =============================================================================
 // header
 // =============================================================================
 .headerbar {
 	font-size: 30px;
 	background-color: white;
-	margin-bottom: 50px;	
+	// margin-bottom: 50px;	
 }
 
 .logo {
@@ -130,7 +151,7 @@ body {
 		display: flex;			
 		align-items: center;
 		padding: 17px;
-		margin-bottom: 50px;
+		// margin-bottom: 50px;
 		.main-nav {
 			display: flex;
 			font-size: 15px;
@@ -265,6 +286,7 @@ body {
 
 .new-recipe-wrapper {
 	padding: 0 130px;
+	margin-top: 50px;
 }
 
 .recipe-pic-box {
@@ -328,6 +350,7 @@ body {
 .user-profile {
 	display: flex;
 	justify-content: space-around;
+	margin-top: 50px;
 	margin-bottom: 50px;
 	a {
 		color: black;
@@ -360,6 +383,9 @@ body {
 			}
 		}
 	}
+}
+.edit_user {
+	margin-top: 50px;
 }
 .profile-recipes {
 	margin-top: 30px;
