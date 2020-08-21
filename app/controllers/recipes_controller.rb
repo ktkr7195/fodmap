@@ -29,7 +29,7 @@ class RecipesController < ApplicationController
       @recipe.tag_list.add('ベジタリアン') if params[:recipe][:vegetarian]
       @recipe.tag_list.add('ビーガン') if params[:recipe][:vegan]
       @recipe.save
-      flash[:success] = 'Recipe created!'
+      flash[:notice] = 'レシピを作成しました！'
       @recipes = current_user.recipes
       render :index
     else
@@ -42,7 +42,7 @@ class RecipesController < ApplicationController
 
   def update
     if @recipe.update(recipe_params)
-      redirect_to @recipe
+      redirect_to @recipe, notice: 'レシピを変更しました'
     else
       render 'edit'
     end
