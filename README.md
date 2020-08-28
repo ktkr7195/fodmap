@@ -4,7 +4,7 @@
 ![happygut-like](https://user-images.githubusercontent.com/33094954/91468027-5d080300-e8cc-11ea-8587-dfbad2118787.gif)
 ![happygut-create](https://user-images.githubusercontent.com/33094954/91468035-609b8a00-e8cc-11ea-9f6e-84003bd6dafb.gif)
 
-ポートフォリオとしてIBS（過敏性腸症候群）の方向けのレシピ共有アプリを作成しました。開発環境と本番環境にDockerを、しインフラにAWSを使用しました。
+ポートフォリオとしてIBS（過敏性腸症候群）の方向けのレシピ共有アプリを作成しました。開発環境と本番環境にDockerを、インフラにAWSを使用しました。
 シンプルながらもわかりやすいデザインを心がけ、さらに自らYouTubeビデオの作成にもチャレンジしました。
 
 URL:https://happy-gut-jp.com/
