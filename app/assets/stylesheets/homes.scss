@@ -32,6 +32,16 @@
   color: #27c2b6;
 }
 
+.content-section-heading {
+  .text-secondary {
+    font-size:45px;
+  }
+  h2 {
+    font-size: 16px;
+  }
+}
+
+
 
 .page-content {
   .about-wrapper {
@@ -104,8 +114,8 @@
 
 
 .content-section {
-  padding-top: 7.5rem;
-  padding-bottom: 7.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
   .section-about {    
     display: flex;    
     padding: 0 60px;

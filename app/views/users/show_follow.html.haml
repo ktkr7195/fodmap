@@ -27,7 +27,7 @@
     .profile-right
       .profile-right-top
         .profile-name  
-          = @user.firstName+@user.lastName
+          = @user.firstName+" "+@user.lastName
         - if @user.id === current_user.id
           .profile-edit  
             = link_to 'プロフィール変更', edit_user_registration_path
