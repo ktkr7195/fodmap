@@ -73,8 +73,8 @@
           %li
             .nav-links.pb-15.pt-15 
               = link_to 'ログアウト', destroy_user_session_path, method: :delete 
-        %li
-          .menu-right.search-dis-none
+        %li.search-dis-none
+          .menu-right
             .nav-links 
               .search-input
                 = form_tag(recipes_search_path,:method => 'get') do

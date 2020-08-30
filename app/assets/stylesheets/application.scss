@@ -25,6 +25,12 @@
 // mobile
 
 @media (min-width: 320px) and (max-width: 480px) {
+	.headerbar {
+    font-size: 15px !important;    
+	}
+	.main-nav li {  
+    border-bottom: inset;
+	}
 	.user-profile .profile-right .profile-right-top {
     display: block !important;  
 	}
@@ -35,9 +41,6 @@
 	}
 	.follow-lists-wrapper {   
     margin: 0 !important;
-	}
-	.iine__button {  
-    font-size: 25px;    
 	}
 	.content-section .section-about {  
     padding: 0;    
@@ -155,10 +158,10 @@ body {
 
 .headerbar-toggle {
 	position: absolute;
-	top: 10px;
+	top: 25px;
 	right: 23px;
 	cursor: pointer;
-	font-size: 24px;
+	font-size: 17px;
 }
 
 .active {
