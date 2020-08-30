@@ -22,6 +22,30 @@
 @import "bootstrap";
 @import "font-awesome";
 
+// mobile
+
+@media (min-width: 320px) and (max-width: 480px) {
+	.user-profile .profile-right .profile-right-top {
+    display: block !important;  
+	}
+	.profile-right-top{
+		.ml-20{
+			margin-left: 0;
+		}
+	}
+	.follow-lists-wrapper {   
+    margin: 0 !important;
+	}
+	.iine__button {  
+    font-size: 25px;    
+	}
+	.content-section .section-about {  
+    padding: 0;    
+	}
+}
+
+
+
 @media (max-width: 1065px) {
 	.recipe-img-upload {
     margin-left: 0 !important;
@@ -214,8 +238,6 @@ body {
 	@include box-shadow;
 	.image_wrapper {		
 		height: 300px;
-		// max-width: 100%;
-		// max-height: 100%;
 		border-radius: 30px 30px 0 0;
 		overflow: hidden;
 	}
