@@ -7,15 +7,15 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     if @comment.save
       flash[:notice] = 'コメントしました'
-      redirect_back(fallback_location: root_path)
+      redirect_back(:fallback_location => root_path)
     else
-      redirect_back(fallback_location: root_path, alert: 'コメントに失敗しました')
+      redirect_back(:fallback_location => root_path, :alert => 'コメントに失敗しました')
     end
   end
 
   def destroy
-    Comment.find_by(id: params[:id], recipe_id: params[:recipe_id]).destroy
-    redirect_back(fallback_location: root_path, notice: 'コメントを削除しました')
+    Comment.find_by(:id => params[:id], :recipe_id => params[:recipe_id]).destroy
+    redirect_back(:fallback_location => root_path, :notice => 'コメントを削除しました')
   end
 
   private

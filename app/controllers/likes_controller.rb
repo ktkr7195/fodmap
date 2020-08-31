@@ -2,12 +2,12 @@ class LikesController < ApplicationController
   before_action :set_variables
 
   def like
-    like = current_user.likes.new(recipe_id: @recipe.id)
+    like = current_user.likes.new(:recipe_id => @recipe.id)
     like.save
   end
 
   def unlike
-    like = current_user.likes.find_by(recipe_id: @recipe.id)
+    like = current_user.likes.find_by(:recipe_id => @recipe.id)
     like.destroy
   end
 

@@ -1,21 +1,21 @@
-User.create!(firstName: 'Takayuki',
-             lastName: 'Nakamura',
-             email: 'test@gmail.com',
-             password: 'password',
-             password_confirmation: 'password',
-             confirmed_at: Time.now)
+User.create!(:firstName => 'Takayuki',
+             :lastName => 'Nakamura',
+             :email => 'test@gmail.com',
+             :password => 'password',
+             :password_confirmation => 'password',
+             :confirmed_at => Time.now)
 
 12.times do |n|
   firstName = Faker::Name.first_name
   lastName = Faker::Name.last_name
   email = "example-#{n + 1}@railstutorial.org"
   password = 'password'
-  User.create!(firstName: firstName,
-               lastName: lastName,
-               email: email,
-               password: password,
-               password_confirmation: password,
-               confirmed_at: Time.now)
+  User.create!(:firstName => firstName,
+               :lastName => lastName,
+               :email => email,
+               :password => password,
+               :password_confirmation => password,
+               :confirmed_at => Time.now)
 end
 
 # リレーションシップ
@@ -76,7 +76,7 @@ Tip1: とてもしっとりしたケーキなので、これをしないと容�
 ケーキを容器から取り出して冷やす
 
 "
-user1.recipes.create!(title: title1, content: content1)
+user1.recipes.create!(:title => title1, :content => content1)
 
 # =========================================================================================
 user2 = User.second
@@ -111,7 +111,7 @@ content2 = "【材料】
 
 
 "
-user2.recipes.create!(title: title2, content: content2)
+user2.recipes.create!(:title => title2, :content => content2)
 
 # =========================================================================================
 user3 = User.third
@@ -153,7 +153,7 @@ Tips1:ネギの白い部分は高FODMAPですが、青い部分は大丈夫で�
 もう一度よく混ぜる
 
 "
-user3.recipes.create!(title: title3, content: content3)
+user3.recipes.create!(:title => title3, :content => content3)
 
 # =========================================================================================
 user4 = User.fourth
@@ -206,7 +206,7 @@ Tip6:ターメリックは抗酸化作用と抗炎症効果があり、健康的
 是非お楽しみください！
 
 "
-user4.recipes.create!(title: title4, content: content4)
+user4.recipes.create!(:title => title4, :content => content4)
 
 # =========================================================================================
 user5 = User.fifth
@@ -231,10 +231,10 @@ content5 = "【作り方】
 塩ひとつまみ
 丁寧にスパイスを混ぜる
 再度混ぜる"
-user5.recipes.create!(title: title5, content: content5)
+user5.recipes.create!(:title => title5, :content => content5)
 
 # =========================================================================================
-user6 = User.find_by(id: 6)
+user6 = User.find_by(:id => 6)
 title6 = '低FODMAPタコス'
 content6 = "【材料】
 ■タコス調味料
@@ -262,10 +262,10 @@ content6 = "【材料】
 タコスの調味料の材料を瓶に入れて混ぜ合わせます。
 フライパンに油を熱し、タコスの調味料を加え、30秒または香りが出るまでかき混ぜる。お好みの肉を加えて火を通します。
 アボカドは大さじ1杯に抑え、コリアンダーとサワークリームをのせます。"
-user6.recipes.create!(title: title6, content: content6)
+user6.recipes.create!(:title => title6, :content => content6)
 
 # =========================================================================================
-user7 = User.find_by(id: 7)
+user7 = User.find_by(:id => 7)
 title7 = 'チキンヌードル'
 content7 = "【材料】
 鶏胸肉の切り身（小）2枚
@@ -291,10 +291,10 @@ content7 = "【材料】
 沸騰したら、スプーンで卵を鍋から取り出し（麺を茹でるための水はそのままにしておきます）、冷水を入れたボウルに入れて火を止めます。卵が十分に冷めたら、慎重に殻を剥き、縦半分にスライスします。皿に盛るまで置いておきます。
 鶏肉を薄くスライスします。脇に置いておきます。卵に火が通ったら、沸騰したお湯に麺を入れます。麺が柔らかくなるまで2～3分茹で、麺を2つの大きなボウルに分けます。
 麺を2つの大きめのボウルに分け、スライスした鶏肉とラーメンのスープを加えます。その上にスライスしたネギをのせ、柔らかいゆで卵をのせます。すぐにお召し上がりください。"
-user7.recipes.create!(title: title7, content: content7)
+user7.recipes.create!(:title => title7, :content => content7)
 
 # =========================================================================================
-user8 = User.find_by(id: 8)
+user8 = User.find_by(:id => 8)
 title8 = 'トムヤムクン'
 content8 = "【材料】
 低FODMAPチキンストックまたは水　4カップ
@@ -313,10 +313,10 @@ content8 = "【材料】
 水またはストックを加えて沸騰させる。火を弱め、20分ほど煮る。
 スープを目の細かいふるいで濾し、固形物を捨てて鍋に戻します。沸騰するまで再加熱し、砂糖、ナンプラー、ライムジュースで味を調えます。
 "
-user8.recipes.create!(title: title8, content: content8)
+user8.recipes.create!(:title => title8, :content => content8)
 
 # =========================================================================================
-user9 = User.find_by(id: 9)
+user9 = User.find_by(:id => 9)
 title9 = 'クリスマスケーキ'
 content9 = "【材料】
 ドライバナナ　¼カップ
@@ -354,4 +354,4 @@ content9 = "【材料】
 小さな水差しにカスタードパウダーと牛乳1/2カップを入れます。なめらかになるまでかき混ぜる。
 カスタード、砂糖、バニラエキス、残りの牛乳を小鍋に入れ、中弱火にかけ、カスタードが沸騰してとろみが出るまで絶えずかき混ぜる。
 1分ほどかき混ぜながら煮る。皿に盛る前にブランデーを混ぜる。"
-user9.recipes.create!(title: title9, content: content9)
+user9.recipes.create!(:title => title9, :content => content9)

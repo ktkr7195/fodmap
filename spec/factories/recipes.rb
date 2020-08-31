@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :recipe do
-    content { "MyText" }
+    content { 'MyText' }
     user { nil }
   end
 end

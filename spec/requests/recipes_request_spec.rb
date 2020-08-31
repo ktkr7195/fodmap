@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Recipes', type: :request do
+RSpec.describe 'Recipes', :type => :request do
   # describe 'GET /index' do
   #   it 'returns http success' do
   #     get '/recipes/index'

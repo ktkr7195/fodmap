@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
-  before_action :find_recipe, only: %i[show edit update destroy]
-  before_action :user_signed_in?, only: %i[create destroy]
-  before_action :correct_user, only: :destroy
+  before_action :find_recipe, :only => %i[show edit update destroy]
+  before_action :user_signed_in?, :only => %i[create destroy]
+  before_action :correct_user, :only => :destroy
 
   def index
     @recipes = if params[:tag]
@@ -42,7 +42,7 @@ class RecipesController < ApplicationController
 
   def update
     if @recipe.update(recipe_params)
-      redirect_to @recipe, notice: 'レシピを変更しました'
+      redirect_to @recipe, :notice => 'レシピを変更しました'
     else
       render 'edit'
     end
@@ -50,12 +50,12 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe.destroy
-    redirect_to root_path, notice: 'レシピを削除しました！'
+    redirect_to root_path, :notice => 'レシピを削除しました！'
   end
 
   def liked
     @user = current_user
-    @likes = Like.where(user_id: @user.id)
+    @likes = Like.where(:user_id => @user.id)
   end
 
   def search
@@ -70,7 +70,7 @@ class RecipesController < ApplicationController
   end
 
   def correct_user
-    @recipe = current_user.recipes.find_by(id: params[:id])
+    @recipe = current_user.recipes.find_by(:id => params[:id])
     redirect_to root_url if @recipe.nil?
   end
 

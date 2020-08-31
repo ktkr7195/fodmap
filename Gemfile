@@ -68,7 +68,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootsnap', '>= 1.1.0', :require => false
 gem 'font-awesome-rails'
 
 group :development, :test do
@@ -82,7 +82,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'rubocop', require: false
+  gem 'rubocop', :require => false
   gem 'rubocop-rails'
   gem 'spring'
   gem 'spring-commands-rspec'
@@ -100,10 +100,11 @@ group :test do
   gem 'capybara', '>= 2.15', '< 4.0'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
-
+  # gem 'chromedriver-helper'
   gem 'factory_bot_rails'
+  gem 'rspec_junit_formatter'
+  gem 'webdrivers', '~> 3.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'tzinfo-data', :platforms => %i[mingw mswin x64_mingw jruby]
