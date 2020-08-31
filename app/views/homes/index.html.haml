@@ -8,7 +8,8 @@
     = render partial: 'category'
   .container
     = render partial: 'recipes/recipe'
-    = paginate @recipes
+    .text-center
+      = paginate @recipes
 - else     
   .main
     .row.left

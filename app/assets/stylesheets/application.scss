@@ -22,19 +22,17 @@
 @import "bootstrap";
 @import "font-awesome";
 
-a:hover, a:focus {
-  color: #757c7b;
-  text-decoration: none;
-}
-a {
-	color: #757c7b;
-}
-
 // mobile
-
 @media (min-width: 320px) and (max-width: 480px) {
 	.headerbar {
-		font-size: 15px !important;  		  
+		font-size: 15px !important;
+		a:hover, a:focus {
+			color: #757c7b;
+			text-decoration: none;
+		}
+		a {
+			color: #757c7b;
+		}  		  
 	}
 	.main-nav li {  
     border-bottom: 2px inset #fff;
@@ -53,11 +51,16 @@ a {
 	.content-section .section-about {  
     padding: 0;    
 	}
+	.menu-right {
+		display: block;
+		li {
+			padding: 15px 0;
+		}
+	}
 }
 
-
-
-@media (max-width: 1065px) {
+// tablet
+@media (max-width: 1195px) {
 	.recipe-img-upload {
     margin-left: 0 !important;
     margin-top: 20px !important;
@@ -76,7 +79,16 @@ a {
     padding-right: 0 !important;
     padding-top: 10px !important;    
 	}
+	.menu-right {
+		display: block;
+		li {
+			padding: 15px 0;
+		}
+	}
 }
+
+
+
 
 @mixin box-shadow {
 	-webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
@@ -135,6 +147,13 @@ body {
 	ul {
 		margin-bottom: 0;
 	}
+	a:hover, a:focus {
+		color: #757c7b;
+		text-decoration: none;
+	}
+	a {
+		color: #757c7b;
+	}
 }
 
 .logo {
@@ -185,7 +204,7 @@ body {
   display: flex;
 }      
 
-@media screen and (min-width: 1180px) {
+@media screen and (min-width: 1195px) {
 	.headerbar {
 		display: flex;			
 		align-items: center;
@@ -230,7 +249,7 @@ body {
 	}
 }
 
-@media screen and (max-width: 1110px) {
+@media screen and (max-width: 1195px) {
 	.search-dis-none {
 		display: none;
 	}
@@ -376,6 +395,27 @@ body {
 .tag-title {
 	margin-left: -32px;
 }
+
+.comment-box {
+	border: dotted;
+	padding: 10px;
+	background: white;
+	margin-bottom: 30px;
+	.comment-sub-box {
+		display: flex;
+		.delete-comment {
+			margin-left: 16px;
+		}
+	}
+}
+.comment-lists .comment-box:last-child {
+  display: none;
+}
+
+.comment-form {
+	margin-top: 50px;
+}
+
 
 // =============================================================================
 // end recipe
