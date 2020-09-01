@@ -75,6 +75,10 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'factory_bot_rails'
   gem 'rspec-rails'
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
 end
 
 group :development do
@@ -93,6 +97,9 @@ group :production do
   # gem 'fog', '1.42'
   # # Use Puma as the app server
   # gem 'puma', '~> 3.11'
+end
+group :production, :staging do
+  gem 'unicorn'
 end
 
 group :test do
