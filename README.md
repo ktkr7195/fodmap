@@ -18,7 +18,7 @@ URL:https://happy-gut-jp.com/
 - Docker
 - CircleCI
 - RSpec
-- SASS, Bootstrap, JQuery
+- Sass, Bootstrap, jQuery
 
 
 # AWS構成図
