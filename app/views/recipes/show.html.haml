@@ -11,9 +11,9 @@
 						投稿者:
 						= link_to @recipe.user.firstName, "/user/#{@recipe.user_id}"					
 		.row
-			%p
-				カテゴリー: #{raw(@recipe.tag_list.map { |t| link_to t, tag_path(t) }.join(', '))}			
 			.col-md-12.mb-15
+				%p
+					カテゴリー: #{raw(@recipe.tag_list.map { |t| link_to t, tag_path(t) }.join(', '))}			
 				= link_to "Back", :back, class: "btn btn-default"
 				- if current_user.id === @recipe.user_id
 					= link_to "Edit", edit_recipe_path, class: "btn btn-default"

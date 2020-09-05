@@ -429,6 +429,7 @@ body {
 	justify-content: space-around;
 	margin-top: 50px;
 	margin-bottom: 50px;
+	widows: 100%;
 	a {
 		color: black;
 	}	
@@ -490,12 +491,14 @@ body {
 // =============================================================================
 // user follow
 // =============================================================================
-.follow-lists-wrapper {
-	border: 1px solid #8a6d3b;		
+.follow-lists-wrapper {	
 	border-radius: 10px;
 	margin: 0 100px;
 	.follow-lists-title {
 		border-bottom: 1px solid #8a6d3b;		
+		h3 {
+			display: inline-block;
+		}
 	}
 	.follow-user {
 		display: flex;
