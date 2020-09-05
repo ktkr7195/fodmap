@@ -98,9 +98,6 @@ group :production do
   # # Use Puma as the app server
   # gem 'puma', '~> 3.11'
 end
-group :production, :staging do
-  gem 'unicorn'
-end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver

@@ -13,6 +13,7 @@ AllCops:
     - "bin/*"
     # AbcSizeチェックで怒られてる(cretate)ので、要リファクタリング
     - "app/controllers/recipes_controller.rb"
+    - "config/deploy.rb"
   DisplayCopNames: true
   TargetRubyVersion: 2.6.3
 
