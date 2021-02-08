@@ -15,7 +15,7 @@ gem 'rails-i18n'
 # faker
 gem 'faker'
 
-gem 'carrierwave',             '1.2.2'
+gem 'carrierwave',             '1.3.2'
 gem 'mini_magick',             '4.9.4'
 
 gem 'pry-rails'
